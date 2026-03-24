@@ -1,1053 +1,2733 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SuccessForce — Revenue Automation Agency for Service Businesses</title>
-<meta name="description" content="SuccessForce is a Revenue Automation Agency that builds custom systems to grow revenue, eliminate operational chaos, and give founders their time back. From $497/month." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<style>
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuccessForce — Revenue Automation Agency for Service Businesses</title>
+  <meta name="description"
+    content="SuccessForce is a Revenue Automation Agency that builds custom systems to grow revenue, eliminate operational chaos, and give founders their time back. From $497/month." />
 
-/* ── Tokens ── */
-:root {
-  --dark:      #24262B;
-  --dark-2:    #32353C;
-  --accent:    #FF5E3A;
-  --acc-h:     #e84e2c;
-  --grey:      #6B7280;
-  --grey-l:    #C5C7CE;
-  --bg-alt:    #F7F7F6;
-  --off:       #F5F5F5;
-  --white:     #FFFFFF;
-  --border:    rgba(0,0,0,0.08);
-  --border-m:  rgba(0,0,0,0.13);
-  --r:         6px;
-  --rl:        12px;
-  --W:         1200px;
-  --font:      'DM Sans', sans-serif;
-  --mono:      'DM Mono', monospace;
-}
+  <!-- ── SEO & Social Meta Tags ── -->
+  <meta property="og:title" content="SuccessForce — Revenue Automation Agency" />
+  <meta property="og:description"
+    content="We build custom systems to grow revenue, eliminate operational chaos, and give founders their time back." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://successforce.agency/" />
+  <meta property="og:image" content="https://successforce.agency/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SuccessForce — Revenue Automation Agency" />
+  <meta name="twitter:description"
+    content="We build custom systems to grow revenue, eliminate operational chaos, and give founders their time back." />
+  <meta name="twitter:image" content="https://successforce.agency/og-image.jpg" />
+  <link rel="canonical" href="https://successforce.agency/" />
 
-/* ── Base ── */
-body { font-family: var(--font); color: var(--dark); background: #fff; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-a    { text-decoration: none; color: inherit; }
-
-/* ── Layout ── */
-.wrap  { max-width: clamp(1200px, 80vw, 2400px); margin: 0 auto; padding: 0 clamp(20px, 3vw, 80px); }
-@media(max-width:1024px){ .wrap { padding: 0 30px; } }
-@media(max-width:768px) { .wrap { padding: 0 20px; } }
-section        { padding: clamp(60px, 8vw, 160px) 0; }
-section.bg-alt { background: var(--bg-alt); }
-
-/* ── Hero keyframes (fire immediately on load) ── */
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(22px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-.h-a1 { animation: fadeUp .55s .05s both; }
-.h-a2 { animation: fadeUp .55s .15s both; }
-.h-a3 { animation: fadeUp .55s .25s both; }
-.h-a4 { animation: fadeUp .55s .38s both; }
-
-/* ── Typography ── */
-.eyebrow { font-size:clamp(11px, 0.9vw, 20px); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--grey); display:block; margin-bottom:10px; }
-h1 { font-size:clamp(38px,6vw,96px); font-weight:700; letter-spacing:-.04em; line-height:1.05; }
-h2 { font-size:clamp(28px,4vw,64px); font-weight:700; letter-spacing:-.03em; line-height:1.10; }
-h4 { font-size:clamp(18px, 1.5vw, 36px);  font-weight:700; letter-spacing:-.01em; line-height:1.25; }
-h5 { font-size:clamp(15px, 1.25vw, 28px);  font-weight:600; line-height:1.30; }
-p  { font-size:clamp(15px, 1.1vw, 24px);  line-height:1.65; color:var(--grey); }
-p.lg { font-size:clamp(17px, 1.3vw, 32px); line-height:1.60; }
-
-/* Section intro block */
-.sh    { text-align:center; max-width:640px; margin:0 auto; }
-.sh p  { margin-top:16px; }
-.sh.l  { text-align:left;  margin:0; }
-
-/* ── Buttons ── */
-.btn { display:inline-flex; align-items:center; gap:8px; font-family:var(--font); font-size:clamp(14px, 1.1vw, 24px); font-weight:500; line-height:1; border:none; border-radius:var(--r); cursor:pointer; transition:background .15s,color .15s,border-color .15s,transform .1s; white-space:nowrap; }
-.btn:active { transform:scale(.98); }
-.btn.dark    { background:var(--dark);   color:#fff; padding:clamp(12px, 1.2vw, 26px) clamp(24px, 2.5vw, 56px); }
-.btn.dark:hover { background:var(--dark-2); }
-.btn.accent  { background:var(--accent); color:#fff; padding:clamp(12px, 1.2vw, 26px) clamp(24px, 2.5vw, 56px); }
-.btn.accent:hover { background:var(--acc-h); }
-.btn.outline { background:transparent; color:var(--dark); border:1.5px solid var(--dark); padding:clamp(11px, 1.1vw, 24px) clamp(22px, 2.2vw, 52px); }
-.btn.outline:hover { background:var(--dark); color:#fff; }
-.btn.outline-w { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.35); padding:clamp(11px, 1.1vw, 24px) clamp(22px, 2.2vw, 52px); }
-.btn.outline-w:hover { background:#fff; color:var(--dark); }
-.btn.sm { padding:clamp(8px, 0.8vw, 16px) clamp(16px, 1.6vw, 32px); font-size:clamp(13px, 0.9vw, 22px); }
-.btn.lg { padding:clamp(15px, 1.5vw, 32px) clamp(32px, 3.2vw, 72px); font-size:clamp(15px, 1.1vw, 26px); }
-.btn.full { display:flex; justify-content:center; width:100%; padding:clamp(14px, 1.4vw, 30px); }
-.btn svg { width:clamp(16px, 1.2vw, 28px); height:clamp(16px, 1.2vw, 28px); stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
-
-/* Icon box */
-.ib { display:flex; align-items:center; justify-content:center; width:44px; height:44px; background:var(--off); border-radius:8px; flex-shrink:0; }
-.ib svg { fill:none; stroke:var(--dark); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.ib.acc { background:rgba(255,94,58,.10); }
-.ib.acc svg { stroke:var(--accent); }
-
-/* ════════════ NAV ════════════ */
-.nav { position:fixed; top:0; left:0; right:0; z-index:100; transition:background .25s,backdrop-filter .25s,box-shadow .25s; }
-.nav.on { background:rgba(36,38,43,.97); backdrop-filter:blur(12px); box-shadow:0 1px 0 rgba(255,255,255,.06); }
-.nav-in { display:flex; align-items:center; justify-content:space-between; height:68px; }
-.logo   { font-size:clamp(20px, 1.5vw, 38px); font-weight:700; letter-spacing:-.04em; color:#fff; display:flex; align-items:center; gap:8px; }
-.ndot   { width:clamp(8px, 0.6vw, 16px); height:clamp(8px, 0.6vw, 16px); background:var(--accent); border-radius:50%; }
-.nav-ul { display:flex; align-items:center; gap:clamp(24px, 3vw, 70px); list-style:none; }
-.nav-ul a { font-size:clamp(14px, 1.1vw, 24px); font-weight:500; color:rgba(255,255,255,.70); transition:color .15s; }
-.nav-ul a:hover { color:#fff; }
-.nav-r  { display:flex; align-items:center; gap:12px; }
-.hbg    { display:none; background:none; border:none; cursor:pointer; color:#fff; padding:4px; }
-@media(max-width:768px){ .nav-ul,.nc { display:none; } .hbg { display:flex; } }
-
-/* Mobile overlay */
-.mob { position:fixed; inset:0; background:var(--dark); z-index:99; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; opacity:0; pointer-events:none; transition:opacity .25s; }
-.mob.on { opacity:1; pointer-events:all; }
-.mob a { font-size:26px; font-weight:700; color:#fff; letter-spacing:-.03em; transition:color .15s; }
-.mob a:hover { color:var(--accent); }
-.mob-x { position:absolute; top:20px; right:24px; background:none; border:none; cursor:pointer; color:#fff; }
-
-/* ════════════ HERO ════════════ */
-.hero { padding:clamp(120px, 12vw, 320px) 0 clamp(80px, 8vw, 200px); background:var(--dark); text-align:center; position:relative; overflow:hidden; }
-.hero::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:800px; height:800px; background:radial-gradient(circle,rgba(255,94,58,.12) 0%,transparent 65%); pointer-events:none; }
-.hero::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:rgba(255,255,255,.07); }
-.badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:6px 12px 6px 8px; margin-bottom:28px; }
-.badge-pill { background:var(--accent); color:#fff; font-family:var(--mono); font-size:clamp(10px, 0.8vw, 18px); font-weight:500; letter-spacing:.08em; text-transform:uppercase; padding:clamp(3px, 0.3vw, 8px) clamp(8px, 0.8vw, 16px); border-radius:100px; }
-.badge-text  { font-size:clamp(12px, 1vw, 20px); font-weight:500; color:rgba(255,255,255,.6); }
-.hero h1 { color:#fff; max-width:clamp(860px, 65vw, 1600px); margin:0 auto clamp(20px, 2vw, 48px); }
-.hero h1 em { font-style:normal; color:var(--accent); }
-.hero-sub { font-size:clamp(17px, 1.3vw, 32px); color:rgba(255,255,255,.55); max-width:clamp(720px, 50vw, 1200px); margin:0 auto clamp(30px, 3.5vw, 80px); line-height:1.75; }
-.hero-ctas { display:flex; gap:clamp(12px, 1vw, 24px); justify-content:center; flex-wrap:wrap; margin-bottom:clamp(40px, 5vw, 100px); }
-.proof { display:flex; align-items:center; justify-content:center; gap:clamp(24px, 3vw, 64px); flex-wrap:wrap; }
-.pv { display:flex; flex-direction:column; align-items:center; gap:5px; }
-.pn { font-size:clamp(26px, 2.5vw, 56px); font-weight:700; letter-spacing:-.04em; color:#fff; }
-.pl { font-size:clamp(11px, 0.8vw, 18px); font-weight:500; color:rgba(255,255,255,.36); letter-spacing:.06em; text-transform:uppercase; }
-.pd { width:1px; height:clamp(36px, 3vw, 64px); background:rgba(255,255,255,.12); }
-
-/* ════════════ PILLARS ════════════ */
-.pg { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(2px, 0.2vw, 6px); margin-top:clamp(40px, 5vw, 80px); background:var(--border); border:1px solid var(--border); border-radius:var(--rl); overflow:hidden; }
-@media(max-width:900px){ .pg { grid-template-columns:1fr; } }
-.pillar { background:#fff; padding:clamp(32px, 3.5vw, 80px) clamp(24px, 3vw, 64px); transition:background .2s; position:relative; overflow:hidden; }
-.pillar:hover { background:#FAFAFA; }
-/* vertical left orange line — scaleY from top */
-.pillar-acc { position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
-.pillar:hover .pillar-acc { transform:scaleX(1); }
-.pil-n { font-family:var(--mono); font-size:clamp(11px, 0.8vw, 20px); font-weight:500; color:var(--grey-l); letter-spacing:.08em; margin-bottom:clamp(16px, 1.5vw, 36px); }
-.pil-tr { display:flex; align-items:center; gap:10px; margin:16px 0 10px; }
-.pb  { font-size:clamp(10px, 0.8vw, 18px); font-weight:600; background:var(--accent); color:#fff; padding:clamp(2px, 0.2vw, 6px) clamp(8px, 0.8vw, 16px); border-radius:100px; letter-spacing:.06em; white-space:nowrap; }
-.pil-sh { font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:var(--dark); margin-bottom:clamp(10px, 1vw, 24px); line-height:1.4; }
-.pil-list { list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:10px; }
-.pil-list li { display:flex; align-items:flex-start; gap:clamp(10px, 1vw, 24px); font-size:clamp(13px, 1vw, 24px); color:var(--grey); line-height:1.5; }
-.pil-list li::before { content:''; width:clamp(5px, 0.5vw, 10px); height:clamp(5px, 0.5vw, 10px); background:var(--accent); border-radius:50%; flex-shrink:0; margin-top:clamp(6px, 0.6vw, 12px); }
-
-/* ════════════ STATS BAND ════════════ */
-.sb { background:var(--accent); padding:clamp(56px, 5vw, 120px) 0; }
-.sr { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(24px, 3vw, 64px); text-align:center; }
-@media(max-width:768px){ .sr { grid-template-columns:repeat(2,1fr); } }
-.sn { font-size:clamp(36px, 4.5vw, 88px); font-weight:700; letter-spacing:-.04em; color:#fff; line-height:1; margin-bottom:clamp(6px, 0.8vw, 16px); }
-.sl { font-size:clamp(12px, 0.9vw, 22px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.65); }
-
-/* ════════════ TABBED PROBLEMS ════════════ */
-.tab-wrap  { display:flex; justify-content:center; margin-top:clamp(44px, 4vw, 88px); }
-.tab-seg   { display:inline-flex; background:var(--white); border:1px solid var(--border-m); border-radius:10px; padding:clamp(4px, 0.4vw, 10px); gap:clamp(3px, 0.4vw, 10px); }
-.tab-btn   { font-family:var(--font); font-size:clamp(14px, 1.1vw, 24px); font-weight:500; color:var(--grey); background:transparent; border:none; border-radius:7px; padding:clamp(11px, 1.2vw, 26px) clamp(28px, 2.5vw, 60px); cursor:pointer; transition:background .2s,color .15s,box-shadow .2s; white-space:nowrap; }
-.tab-btn.active  { background:var(--dark); color:#fff; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,.18); }
-.tab-btn:hover:not(.active) { color:var(--dark); background:var(--off); }
-@media(max-width:600px){ .tab-btn { padding:10px 16px; font-size:13px; } }
-.tab-panel { display:none; }
-.tab-panel.active { display:block; }
-.icard-g   { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px, 2vw, 40px); margin-top:clamp(48px, 5vw, 100px); }
-@media(max-width:1024px){ .icard-g { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:600px) { .icard-g { grid-template-columns:1fr; } }
-.icard     { background:#fff; border:1px solid var(--border); border-radius:var(--rl); padding:clamp(22px, 2.5vw, 50px) clamp(20px, 2vw, 40px); transition:border-color .2s,box-shadow .2s,transform .15s; }
-.icard:hover { border-color:rgba(255,94,58,.22); box-shadow:0 6px 24px rgba(255,94,58,.05); transform:translateY(-2px); }
-.icard-hd  { display:flex; align-items:center; gap:clamp(12px, 1.2vw, 24px); margin-bottom:10px; }
-.icard-hd h5 { font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:var(--dark); line-height:1.3; }
-.icard p   { font-size:clamp(13px, 1vw, 24px); color:var(--grey); line-height:1.6; }
-.iib       { width:clamp(36px, 3vw, 70px); height:clamp(36px, 3vw, 70px); min-width:clamp(36px, 3vw, 70px); background:var(--off); border-radius:7px; display:flex; align-items:center; justify-content:center; }
-.iib svg   { width:clamp(16px, 1.5vw, 32px); height:clamp(16px, 1.5vw, 32px); fill:none; stroke:var(--dark); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-
-/* ════════════ HOW IT WORKS ════════════ */
-.how-g { display:flex; background:#fff; border:1px solid var(--border); border-radius:var(--rl); overflow:hidden; margin-top:clamp(64px, 6vw, 128px); }
-@media(max-width:900px){ .how-g { flex-direction:column; } }
-.hi { flex:1; padding:clamp(32px, 3vw, 80px) clamp(28px, 2.5vw, 60px); position:relative; border-right:1px solid var(--border); transition:background .2s; }
-.hi:last-child { border-right:none; }
-@media(max-width:900px){ .hi { border-right:none; border-bottom:1px solid var(--border); } .hi:last-child { border-bottom:none; } }
-.hi:hover { background:var(--bg-alt); }
-.hs { font-family:var(--mono); font-size:clamp(11px, 0.8vw, 20px); font-weight:500; color:var(--grey-l); letter-spacing:.08em; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
-.hs::before { content:''; width:24px; height:1px; background:var(--grey-l); }
-.hi h5 { margin:14px 0 10px; font-size:clamp(15px, 1.1vw, 26px); }
-.hi p  { font-size:clamp(13px, 1vw, 24px); }
-.hi-acc { position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
-.hi:hover .hi-acc { transform:scaleX(1); }
-
-/* ════════════ OUR PROCESS ════════════ */
-.proc-bar { display:flex; background:#fff; border:1px solid var(--border); border-radius:var(--rl); overflow:hidden; margin-top:clamp(48px, 5vw, 100px); }
-@media(max-width:768px){ .proc-bar { flex-direction:column; } }
-.proc-step { flex:1; padding:clamp(32px, 3vw, 80px) clamp(28px, 2.5vw, 60px); position:relative; border-right:1px solid var(--border); transition:background .2s; }
-.proc-step:last-child { border-right:none; }
-@media(max-width:768px){ .proc-step { border-right:none; border-bottom:1px solid var(--border); } .proc-step:last-child { border-bottom:none; } }
-.proc-step:hover { background:var(--bg-alt); }
-.proc-n { font-family:var(--mono); font-size:clamp(10px, 0.8vw, 18px); font-weight:500; color:var(--grey-l); letter-spacing:.08em; margin-bottom:12px; }
-.proc-step h5 { margin-bottom:8px; font-size:clamp(14px, 1.1vw, 26px); }
-.proc-step p  { font-size:clamp(13px, 1vw, 24px); line-height:1.6; }
-.proc-acc { position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform .3s ease; }
-.proc-step:hover .proc-acc { transform:scaleX(1); }
-
-/* Integrations row */
-.int-row { display:flex; align-items:center; gap:clamp(10px, 1vw, 24px); flex-wrap:wrap; justify-content:center; margin-top:clamp(40px, 4vw, 80px); }
-.int-b { display:flex; align-items:center; gap:6px; padding:clamp(6px, 0.6vw, 16px) clamp(14px, 1.4vw, 32px); background:var(--off); border:1px solid var(--border); border-radius:100px; font-size:clamp(12px, 0.9vw, 22px); font-weight:500; color:var(--dark); font-family:var(--mono); }
-.int-d { width:5px; height:5px; border-radius:50%; background:var(--accent); }
-
-/* ════════════ PRICING ════════════ */
-.pw { display:grid; grid-template-columns:1fr 1.8fr; gap:clamp(64px, 6vw, 140px); align-items:start; margin-top:clamp(56px, 5vw, 120px); }
-@media(max-width:860px){ .pw { grid-template-columns:1fr; gap:48px; } }
-.pi h2 { margin-bottom:16px; }
-.pi > p { color:var(--grey); }
-.pfl { list-style:none; margin-top:clamp(28px, 3vw, 64px); display:flex; flex-direction:column; gap:clamp(13px, 1.2vw, 26px); }
-.pfl li { display:flex; align-items:flex-start; gap:12px; font-size:clamp(14px, 1.1vw, 24px); color:var(--grey); line-height:1.5; }
-.cc { width:clamp(18px, 1.6vw, 36px); height:clamp(18px, 1.6vw, 36px); background:rgba(255,94,58,.10); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
-.cc svg { width:clamp(10px, 0.9vw, 20px); height:clamp(10px, 0.9vw, 20px); stroke:var(--accent); fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
-
-.pcard { background:var(--dark); border-radius:var(--rl); padding:clamp(44px, 4.5vw, 90px); color:#fff; position:relative; overflow:hidden; }
-.pcard::before { content:''; position:absolute; top:-80px; right:-80px; width:300px; height:300px; background:radial-gradient(circle,rgba(255,94,58,.15) 0%,transparent 60%); pointer-events:none; }
-.p-plan { font-size:clamp(12px, 0.9vw, 22px); font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:rgba(255,255,255,.40); margin-bottom:8px; }
-.p-hl   { font-size:clamp(20px, 1.6vw, 40px); font-weight:700; letter-spacing:-.02em; color:#fff; margin-bottom:clamp(32px, 3vw, 70px); line-height:1.3; }
-.p-ar   { display:flex; align-items:flex-end; gap:4px; margin-bottom:6px; }
-.p-cur  { font-size:clamp(22px, 1.8vw, 44px); font-weight:700; color:#fff; padding-bottom:5px; }
-.p-amt  { font-size:clamp(58px, 5.5vw, 120px); font-weight:700; letter-spacing:-.05em; color:#fff; line-height:1; }
-.p-per  { font-size:clamp(14px, 1.1vw, 24px); color:rgba(255,255,255,.35); padding-bottom:9px; }
-.p-use  { display:inline-block; font-family:var(--mono); font-size:clamp(12px, 0.9vw, 24px); color:var(--accent); background:rgba(255,94,58,.10); padding:clamp(8px, 0.8vw, 16px) clamp(12px, 1vw, 24px); border-radius:6px; margin:6px 0; }
-.p-ns   { font-size:clamp(13px, 1vw, 26px); color:rgba(255,255,255,.40); line-height:1.6; margin-bottom:4px; }
-.p-div  { height:1px; background:rgba(255,255,255,.08); margin:clamp(28px, 3vw, 64px) 0; }
-.p-inc  { font-size:clamp(11px, 0.8vw, 18px); font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.32); margin-bottom:clamp(18px, 1.5vw, 36px); }
-.p-list { list-style:none; display:flex; flex-direction:column; gap:clamp(13px, 1.1vw, 26px); margin-bottom:clamp(32px, 3vw, 70px); }
-.p-list li { display:flex; align-items:flex-start; gap:clamp(12px, 1.2vw, 24px); font-size:clamp(14px, 1.1vw, 26px); color:rgba(255,255,255,.72); line-height:1.5; }
-.ck { width:clamp(18px, 1.5vw, 36px); height:clamp(18px, 1.5vw, 36px); background:rgba(255,255,255,.08); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
-.ck svg { width:clamp(10px, 0.9vw, 20px); height:clamp(10px, 0.9vw, 20px); stroke:rgba(255,255,255,.65); fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
-.p-fn { font-family:var(--mono); font-size:clamp(11px, 0.8vw, 20px); color:rgba(255,255,255,.25); margin-top:16px; line-height:1.6; }
-
-/* ════════════ TESTIMONIALS ════════════ */
-.tg { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(24px, 2.5vw, 60px); margin-top:clamp(56px, 5vw, 120px); }
-@media(max-width:860px){ .tg { grid-template-columns:1fr; } }
-.tc { background:#fff; border:1px solid var(--border); border-radius:var(--rl); padding:clamp(32px, 3.5vw, 80px) clamp(28px, 3vw, 70px); transition:box-shadow .2s,transform .2s; }
-.tc:hover { box-shadow:0 8px 32px rgba(0,0,0,.08); transform:translateY(-3px); }
-.stars { color:#F59E0B; font-size:clamp(14px, 1.2vw, 26px); letter-spacing:2px; margin-bottom:clamp(20px, 2vw, 48px); }
-.tq   { font-size:clamp(15px, 1.2vw, 28px); font-style:italic; color:var(--dark); line-height:1.65; margin-bottom:clamp(24px, 2.5vw, 56px); }
-.tau  { display:flex; align-items:center; gap:clamp(12px, 1.2vw, 24px); padding-top:clamp(20px, 2vw, 48px); border-top:1px solid var(--border); }
-.tav  { width:clamp(40px, 3.5vw, 80px); height:clamp(40px, 3.5vw, 80px); background:var(--off); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:clamp(14px, 1.2vw, 28px); font-weight:700; color:var(--grey); flex-shrink:0; }
-.tn   { font-size:clamp(13px, 1vw, 24px); font-weight:600; color:var(--dark); }
-.tr   { font-size:clamp(12px, 0.9vw, 22px); color:var(--grey); margin-top:2px; }
-
-/* ════════════ FAQ ════════════ */
-.faq-list { margin-top:clamp(56px, 5.5vw, 120px); }
-.fi { border-bottom:1px solid var(--border); }
-.fq { display:flex; align-items:center; justify-content:space-between; padding:clamp(22px, 2.2vw, 52px) 0; cursor:pointer; gap:clamp(24px, 2.5vw, 60px); user-select:none; }
-.fqt { font-size:clamp(15px, 1.1vw, 26px); font-weight:500; color:var(--dark); line-height:1.5; }
-.ft  { width:clamp(28px, 2.5vw, 60px); height:clamp(28px, 2.5vw, 60px); background:var(--off); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:clamp(20px, 1.8vw, 40px); line-height:1; color:var(--dark); font-weight:300; transition:background .15s,transform .25s; }
-.fi.open .ft { background:var(--accent); color:#fff; transform:rotate(45deg); }
-.fa { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-.fi.open .fa { max-height:400px; }
-.fai { padding:0 clamp(48px, 5vw, 120px) clamp(22px, 2.2vw, 52px) 0; font-size:clamp(14px, 1.1vw, 26px); color:var(--grey); line-height:1.7; }
-
-/* ════════════ FINAL CTA ════════════ */
-.cta-sec { background:var(--dark); padding:clamp(120px, 10vw, 240px) 0; text-align:center; position:relative; overflow:hidden; }
-.cta-sec::before { content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(255,94,58,.10) 0%,transparent 65%); pointer-events:none; }
-.cta-sec h2  { color:#fff; max-width:clamp(640px, 50vw, 1200px); margin:0 auto 20px; }
-.cta-sec .sub { color:rgba(255,255,255,.48); max-width:clamp(600px, 45vw, 1100px); margin:0 auto 0; font-size:clamp(17px, 1.4vw, 32px); line-height:1.60; }
-.cn   { font-family:var(--mono); font-size:clamp(11px, 0.8vw, 20px); color:rgba(255,255,255,.26); text-align:center; }
-
-/* ════════════ FOOTER ════════════ */
-.foot { background:#1A1C21; padding:clamp(72px, 6vw, 160px) 0 0; width:100%; }
-.foot-inner { width:100%; padding:0 clamp(24px, 4vw, 100px); }
-.fg { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:clamp(48px, 4vw, 100px); padding-bottom:clamp(56px, 5vw, 120px); }
-@media(max-width:860px){ .fg { grid-template-columns:1fr 1fr; } }
-@media(max-width:540px){ .fg { grid-template-columns:1fr; } }
-.fl  { font-size:clamp(20px, 1.8vw, 44px); font-weight:700; letter-spacing:-.04em; color:#fff; display:flex; align-items:center; gap:8px; margin-bottom:14px; }
-.ft2 { font-size:clamp(13px, 1vw, 24px); color:rgba(255,255,255,.35); line-height:1.65; max-width:clamp(240px, 20vw, 500px); }
-.fh  { font-size:clamp(12px, 0.9vw, 22px); font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.30); margin-bottom:clamp(18px, 1.5vw, 36px); }
-.ful { list-style:none; display:flex; flex-direction:column; gap:clamp(12px, 1.1vw, 24px); }
-.ful a { font-size:clamp(14px, 1.1vw, 26px); color:rgba(255,255,255,.48); transition:color .15s; }
-.ful a:hover { color:#fff; }
-.fb  { border-top:1px solid rgba(255,255,255,.07); padding:clamp(20px, 2vw, 44px) 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-.fcp { font-size:clamp(12px, 0.9vw, 22px); color:rgba(255,255,255,.22); }
-.fac { font-family:var(--mono); font-size:clamp(11px, 0.8vw, 20px); color:var(--accent); letter-spacing:.04em; }
-
-/* Utils */
-.mt16 { margin-top:16px; }
-.mt24 { margin-top:24px; }
-.mt32 { margin-top:32px; }
-</style>
-<script>
-// All functions defined here in <head> so they're always available
-// before any onclick handlers fire, regardless of Cloudflare injection below.
-
-function switchTab(index, btn) {
-  var seg = btn.closest('.tab-seg');
-  seg.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  var panels = btn.closest('.wrap').querySelectorAll('.tab-panel');
-  panels.forEach(function(p) { p.classList.remove('active'); });
-  panels[index].classList.add('active');
-}
-
-function oM() { document.getElementById('mob').classList.add('on');  document.body.style.overflow = 'hidden'; }
-function cM() { document.getElementById('mob').classList.remove('on'); document.body.style.overflow = '';      }
-
-function tFaq(btn) {
-  var item = btn.closest('.fi');
-  var open = item.classList.contains('open');
-  document.querySelectorAll('.fi.open').forEach(function(i) { i.classList.remove('open'); });
-  if (!open) item.classList.add('open');
-}
-
-// Nav + counters need DOM ready
-document.addEventListener('DOMContentLoaded', function() {
-  // Nav scroll
-  window.addEventListener('scroll', function() {
-    document.getElementById('nav').classList.toggle('on', window.scrollY > 60);
-  });
-
-  // Counter animation
-  var animated = false;
-  function runCounters() {
-    if (animated) return;
-    animated = true;
-    document.querySelectorAll('.sn[data-target]').forEach(function(el) {
-      var end      = parseInt(el.dataset.target);
-      var suffix   = el.dataset.sfx || '';
-      var start    = null;
-      var duration = 1400;
-      function step(ts) {
-        if (!start) start = ts;
-        var p = Math.min((ts - start) / duration, 1);
-        var e = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(e * end) + suffix;
-        if (p < 1) requestAnimationFrame(step);
-        else el.textContent = end + suffix;
-      }
-      requestAnimationFrame(step);
-    });
+  <!-- ── Structured Data (JSON-LD) ── -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SuccessForce",
+  "url": "https://successforce.agency",
+  "logo": "https://successforce.agency/logo.png",
+  "description": "Revenue Automation Agency building custom systems for service businesses.",
+  "sameAs": [
+    "https://www.linkedin.com/company/successforce"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "497.00",
+    "priceCurrency": "USD"
   }
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) runCounters();
-    }, { threshold: 0.2 }).observe(document.querySelector('.sb'));
-  } else {
-    runCounters();
-  }
-});
+}
 </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,700&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ── Tokens ── */
+    :root {
+      --dark: #24262B;
+      --dark-2: #32353C;
+      --accent: #FF5E3A;
+      --acc-h: #e84e2c;
+      --grey: #6B7280;
+      --grey-l: #C5C7CE;
+      --bg-alt: #F7F7F6;
+      --off: #F5F5F5;
+      --white: #FFFFFF;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-m: rgba(0, 0, 0, 0.13);
+      --r: 6px;
+      --rl: 12px;
+      --W: 1200px;
+      --font: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    /* ── Base ── */
+    body {
+      font-family: var(--font);
+      color: var(--dark);
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      max-width: clamp(1200px, 80vw, 2400px);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 3vw, 80px);
+    }
+
+    @media(max-width:1024px) {
+      .wrap {
+        padding: 0 30px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    section {
+      padding: clamp(60px, 8vw, 160px) 0;
+    }
+
+    section.bg-alt {
+      background: var(--bg-alt);
+    }
+
+    /* ── Hero keyframes (fire immediately on load) ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .h-a1 {
+      animation: fadeUp .55s .05s both;
+    }
+
+    .h-a2 {
+      animation: fadeUp .55s .15s both;
+    }
+
+    .h-a3 {
+      animation: fadeUp .55s .25s both;
+    }
+
+    .h-a4 {
+      animation: fadeUp .55s .38s both;
+    }
+
+    /* ── Typography ── */
+    .eyebrow {
+      font-size: clamp(11px, 0.9vw, 20px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grey);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 160px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4.5vw, 120px);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.10;
+      text-wrap: balance;
+    }
+
+    h4 {
+      font-size: clamp(18px, 1.5vw, 64px);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.25;
+    }
+
+    h5 {
+      font-size: clamp(15px, 1.4vw, 48px);
+      font-weight: 600;
+      line-height: 1.30;
+    }
+
+    p {
+      font-size: clamp(15px, 1.2vw, 42px);
+      line-height: 1.65;
+      color: var(--grey);
+    }
+
+    p.lg {
+      font-size: clamp(17px, 1.4vw, 52px);
+      line-height: 1.60;
+    }
+
+    /* Section intro block */
+    .sh {
+      text-align: center;
+      max-width: clamp(640px, 45vw, 1600px);
+      margin: 0 auto;
+    }
+
+    .sh p {
+      margin-top: 16px;
+    }
+
+    .sh.l {
+      text-align: left;
+      margin: 0;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: clamp(14px, 1.1vw, 24px);
+      font-weight: 500;
+      line-height: 1;
+      border: none;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s, transform .1s;
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+    .btn.dark {
+      background: var(--dark);
+      color: #fff;
+      padding: clamp(12px, 1.2vw, 26px) clamp(24px, 2.5vw, 56px);
+    }
+
+    .btn.dark:hover {
+      background: var(--dark-2);
+    }
+
+    .btn.accent {
+      background: var(--accent);
+      color: #fff;
+      padding: clamp(12px, 1.2vw, 26px) clamp(24px, 2.5vw, 56px);
+    }
+
+    .btn.accent:hover {
+      background: var(--acc-h);
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid var(--dark);
+      padding: clamp(11px, 1.1vw, 24px) clamp(22px, 2.2vw, 52px);
+    }
+
+    .btn.outline:hover {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .btn.outline-w {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, .35);
+      padding: clamp(11px, 1.1vw, 24px) clamp(22px, 2.2vw, 52px);
+    }
+
+    .btn.outline-w:hover {
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .btn.sm {
+      padding: clamp(8px, 0.8vw, 16px) clamp(16px, 1.6vw, 32px);
+      font-size: clamp(13px, 0.9vw, 22px);
+    }
+
+    .btn.lg {
+      padding: clamp(15px, 1.5vw, 32px) clamp(32px, 3.2vw, 72px);
+      font-size: clamp(15px, 1.1vw, 26px);
+    }
+
+    .btn.full {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: clamp(14px, 1.4vw, 30px);
+    }
+
+    .btn svg {
+      width: clamp(16px, 1.2vw, 28px);
+      height: clamp(16px, 1.2vw, 28px);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* Icon box */
+    .ib {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--off);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .ib svg {
+      fill: none;
+      stroke: var(--dark);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ib.acc {
+      background: rgba(255, 94, 58, .10);
+    }
+
+    .ib.acc svg {
+      stroke: var(--accent);
+    }
+
+    /* ════════════ NAV ════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background .25s, backdrop-filter .25s, box-shadow .25s;
+    }
+
+    .nav.on {
+      background: rgba(36, 38, 43, .97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .06);
+    }
+
+    .nav-in {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(24px, 2.5vw, 42px) 0;
+      transition: padding .25s;
+    }
+
+    .logo {
+      font-size: clamp(20px, 1.5vw, 38px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ndot {
+      width: clamp(8px, 0.6vw, 16px);
+      height: clamp(8px, 0.6vw, 16px);
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .nav-ul {
+      display: flex;
+      align-items: center;
+      gap: clamp(24px, 3vw, 70px);
+      list-style: none;
+    }
+
+    .nav-ul a {
+      font-size: clamp(14px, 1.1vw, 24px);
+      font-weight: 500;
+      color: rgba(255, 255, 255, .70);
+      transition: color .15s;
+    }
+
+    .nav-ul a:hover {
+      color: #fff;
+    }
+
+    .nav-r {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hbg {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      padding: 4px;
+    }
+
+    @media(max-width:768px) {
+
+      .nav-ul,
+      .nc {
+        display: none;
+      }
+
+      .hbg {
+        display: flex;
+      }
+    }
+
+    /* Mobile overlay */
+    .mob {
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s;
+    }
+
+    .mob.on {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mob a {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.03em;
+      transition: color .15s;
+    }
+
+    .mob a:hover {
+      color: var(--accent);
+    }
+
+    .mob-x {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* ════════════ HERO ════════════ */
+    .hero {
+      padding: clamp(120px, 12vw, 320px) 0 clamp(80px, 8vw, 200px);
+      background: var(--dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255, 94, 58, .12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 100px;
+      padding: 6px 12px 6px 8px;
+      margin-bottom: 28px;
+    }
+
+    .badge-pill {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--mono);
+      font-size: clamp(10px, 0.8vw, 18px);
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: clamp(3px, 0.3vw, 8px) clamp(8px, 0.8vw, 16px);
+      border-radius: 100px;
+    }
+
+    .badge-text {
+      font-size: clamp(12px, 1vw, 20px);
+      font-weight: 500;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .hero h1 {
+      color: #fff;
+      max-width: clamp(860px, 65vw, 1600px);
+      margin: 0 auto clamp(20px, 2vw, 48px);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 1.3vw, 32px);
+      color: rgba(255, 255, 255, .55);
+      max-width: clamp(720px, 50vw, 1200px);
+      margin: 0 auto clamp(30px, 3.5vw, 80px);
+      line-height: 1.75;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: clamp(12px, 1vw, 24px);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: clamp(40px, 5vw, 100px);
+    }
+
+    .proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px, 3vw, 64px);
+      flex-wrap: wrap;
+    }
+
+    .pv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pn {
+      font-size: clamp(26px, 2.5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: #fff;
+    }
+
+    .pl {
+      font-size: clamp(11px, 0.8vw, 18px);
+      font-weight: 500;
+      color: rgba(255, 255, 255, .36);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .pd {
+      width: 1px;
+      height: clamp(36px, 3vw, 64px);
+      background: rgba(255, 255, 255, .12);
+    }
+
+    /* ════════════ PILLARS ════════════ */
+    .pg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2px, 0.2vw, 6px);
+      margin-top: clamp(40px, 5vw, 80px);
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+    }
+
+    @media(max-width:900px) {
+      .pg {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pillar {
+      background: #fff;
+      padding: clamp(32px, 3.5vw, 80px) clamp(24px, 3vw, 64px);
+      transition: background .2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar:hover {
+      background: #FAFAFA;
+    }
+
+    /* vertical left orange line — scaleY from top */
+    .pillar-acc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s ease;
+    }
+
+    .pillar:hover .pillar-acc {
+      transform: scaleX(1);
+    }
+
+    .pil-n {
+      font-family: var(--mono);
+      font-size: clamp(11px, 0.8vw, 20px);
+      font-weight: 500;
+      color: var(--grey-l);
+      letter-spacing: .08em;
+      margin-bottom: clamp(16px, 1.5vw, 36px);
+    }
+
+    .pil-tr {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 16px 0 10px;
+    }
+
+    .pb {
+      font-size: clamp(10px, 0.8vw, 18px);
+      font-weight: 600;
+      background: var(--accent);
+      color: #fff;
+      padding: clamp(2px, 0.2vw, 6px) clamp(8px, 0.8vw, 16px);
+      border-radius: 100px;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .pil-sh {
+      font-size: clamp(14px, 1.1vw, 26px);
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: clamp(10px, 1vw, 24px);
+      line-height: 1.4;
+    }
+
+    .pil-list {
+      list-style: none;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pil-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(10px, 1vw, 24px);
+      font-size: clamp(13px, 1vw, 24px);
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .pil-list li::before {
+      content: '';
+      width: clamp(5px, 0.5vw, 10px);
+      height: clamp(5px, 0.5vw, 10px);
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: clamp(6px, 0.6vw, 12px);
+    }
+
+    /* ════════════ STATS BAND ════════════ */
+    .sb {
+      background: var(--accent);
+      padding: clamp(56px, 5vw, 120px) 0;
+    }
+
+    .sr {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(24px, 3vw, 64px);
+      text-align: center;
+    }
+
+    @media(max-width:768px) {
+      .sr {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .sn {
+      font-size: clamp(36px, 4.5vw, 88px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: clamp(6px, 0.8vw, 16px);
+    }
+
+    .sl {
+      font-size: clamp(12px, 0.9vw, 22px);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .65);
+    }
+
+    /* ════════════ TABBED PROBLEMS ════════════ */
+    .tab-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: clamp(44px, 4vw, 88px);
+    }
+
+    .tab-seg {
+      display: inline-flex;
+      background: var(--white);
+      border: 1px solid var(--border-m);
+      border-radius: 10px;
+      padding: clamp(4px, 0.4vw, 10px);
+      gap: clamp(3px, 0.4vw, 10px);
+    }
+
+    .tab-btn {
+      font-family: var(--font);
+      font-size: clamp(14px, 1.1vw, 24px);
+      font-weight: 500;
+      color: var(--grey);
+      background: transparent;
+      border: none;
+      border-radius: 7px;
+      padding: clamp(11px, 1.2vw, 26px) clamp(28px, 2.5vw, 60px);
+      cursor: pointer;
+      transition: background .2s, color .15s, box-shadow .2s;
+      white-space: nowrap;
+    }
+
+    .tab-btn.active {
+      background: var(--dark);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+    }
+
+    .tab-btn:hover:not(.active) {
+      color: var(--dark);
+      background: var(--off);
+    }
+
+    @media(max-width:600px) {
+      .tab-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .icard-g {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(16px, 2vw, 40px);
+      margin-top: clamp(48px, 5vw, 100px);
+    }
+
+    @media(max-width:1024px) {
+      .icard-g {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:600px) {
+      .icard-g {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .icard {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      padding: clamp(22px, 2.5vw, 50px) clamp(20px, 2vw, 40px);
+      transition: border-color .2s, box-shadow .2s, transform .15s;
+    }
+
+    .icard:hover {
+      border-color: rgba(255, 94, 58, .22);
+      box-shadow: 0 6px 24px rgba(255, 94, 58, .05);
+      transform: translateY(-2px);
+    }
+
+    .icard-hd {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 1.2vw, 24px);
+      margin-bottom: 10px;
+    }
+
+    .icard-hd h5 {
+      font-size: clamp(14px, 1.1vw, 26px);
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .icard p {
+      font-size: clamp(13px, 1vw, 24px);
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    .iib {
+      width: clamp(36px, 3vw, 70px);
+      height: clamp(36px, 3vw, 70px);
+      min-width: clamp(36px, 3vw, 70px);
+      background: var(--off);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .iib svg {
+      width: clamp(16px, 1.5vw, 32px);
+      height: clamp(16px, 1.5vw, 32px);
+      fill: none;
+      stroke: var(--dark);
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ════════════ HOW IT WORKS ════════════ */
+    .how-g {
+      display: flex;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+      margin-top: clamp(64px, 6vw, 128px);
+    }
+
+    @media(max-width:900px) {
+      .how-g {
+        flex-direction: column;
+      }
+    }
+
+    .hi {
+      flex: 1;
+      padding: clamp(32px, 3vw, 80px) clamp(28px, 2.5vw, 60px);
+      position: relative;
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+
+    .hi:last-child {
+      border-right: none;
+    }
+
+    @media(max-width:900px) {
+      .hi {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .hi:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .hi:hover {
+      background: var(--bg-alt);
+    }
+
+    .hs {
+      font-family: var(--mono);
+      font-size: clamp(11px, 0.8vw, 20px);
+      font-weight: 500;
+      color: var(--grey-l);
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hs::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--grey-l);
+    }
+
+    .hi h5 {
+      margin: 14px 0 10px;
+      font-size: clamp(15px, 1.1vw, 26px);
+    }
+
+    .hi p {
+      font-size: clamp(13px, 1vw, 24px);
+    }
+
+    .hi-acc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+    .hi:hover .hi-acc {
+      transform: scaleX(1);
+    }
+
+    /* ════════════ OUR PROCESS ════════════ */
+    .proc-bar {
+      display: flex;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+      margin-top: clamp(48px, 5vw, 100px);
+    }
+
+    @media(max-width:768px) {
+      .proc-bar {
+        flex-direction: column;
+      }
+    }
+
+    .proc-step {
+      flex: 1;
+      padding: clamp(32px, 3vw, 80px) clamp(28px, 2.5vw, 60px);
+      position: relative;
+      border-right: 1px solid var(--border);
+      transition: background .2s;
+    }
+
+    .proc-step:last-child {
+      border-right: none;
+    }
+
+    @media(max-width:768px) {
+      .proc-step {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .proc-step:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .proc-step:hover {
+      background: var(--bg-alt);
+    }
+
+    .proc-n {
+      font-family: var(--mono);
+      font-size: clamp(10px, 0.8vw, 18px);
+      font-weight: 500;
+      color: var(--grey-l);
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .proc-step h5 {
+      margin-bottom: 8px;
+      font-size: clamp(14px, 1.1vw, 26px);
+    }
+
+    .proc-step p {
+      font-size: clamp(13px, 1vw, 24px);
+      line-height: 1.6;
+    }
+
+    .proc-acc {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+    .proc-step:hover .proc-acc {
+      transform: scaleX(1);
+    }
+
+    /* Integrations row */
+    .int-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 1vw, 24px);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: clamp(40px, 4vw, 80px);
+    }
+
+    .int-b {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: clamp(6px, 0.6vw, 16px) clamp(14px, 1.4vw, 32px);
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: clamp(12px, 0.9vw, 22px);
+      font-weight: 500;
+      color: var(--dark);
+      font-family: var(--mono);
+    }
+
+    .int-d {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ════════════ PRICING ════════════ */
+    .math-box {
+      background: #1f1f22;
+      border-radius: 12px;
+      padding: clamp(24px, 2.5vw, 40px);
+      margin-top: 32px;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 40px;
+    }
+    .math-box p {
+      font-size: clamp(14px, 1.1vw, 18px);
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .pcard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .pcard.light {
+      background: #ffffff;
+      color: #1a1a1a;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    .pcard.light .p-hl,
+    .pcard.light .p-plan,
+    .pcard.light .p-cur,
+    .pcard.light .p-amt { color: #1a1a1a; }
+    .pcard.light .p-plan { color: rgba(0,0,0,0.6); }
+    .pcard.light .p-cur, .pcard.light .p-per { color: rgba(0,0,0,0.5); }
+    .pcard.light .p-ns { color: rgba(0,0,0,0.6); }
+    .pcard.light .p-inc { color: #1a1a1a; border-top-color: rgba(0,0,0,0.1); }
+    .pcard.light .p-div { border-top-color: rgba(0,0,0,0.1); }
+    .pcard.light .btn { background: #1a1a1a; color: #fff; }
+    .pcard.light .cc svg { stroke: #1a1a1a; }
+    .pcard.light .ck svg { stroke: #1a1a1a; }
+    .pcard.light .p-list li { color: #1a1a1a; }
+    .pcard.light .ck { background: rgba(0, 0, 0, .08); }
+    
+    .badge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+
+    @media(max-width:860px) {
+      .pcard-grid { grid-template-columns: 1fr; }
+    }
+
+    .pw {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: clamp(40px, 4vw, 80px);
+      align-items: start;
+      margin-top: clamp(56px, 5vw, 120px);
+    }
+
+    @media(max-width:860px) {
+      .pw {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    .pi h2 {
+      margin-bottom: 16px;
+    }
+
+    .pi>p {
+      color: var(--grey);
+    }
+
+    .pfl {
+      list-style: none;
+      margin-top: clamp(28px, 3vw, 64px);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(13px, 1.2vw, 26px);
+    }
+
+    .pfl li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: clamp(14px, 1.1vw, 24px);
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .cc {
+      width: clamp(18px, 1.6vw, 36px);
+      height: clamp(18px, 1.6vw, 36px);
+      background: rgba(255, 94, 58, .10);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .cc svg {
+      width: clamp(10px, 0.9vw, 20px);
+      height: clamp(10px, 0.9vw, 20px);
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .pcard {
+      background: var(--dark);
+      border-radius: var(--rl);
+      padding: clamp(32px, 3.5vw, 48px);
+      color: #fff;
+      position: relative;
+      overflow: visible;
+    }
+
+    .pcard::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 94, 58, .15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .p-plan {
+      font-size: clamp(12px, 0.9vw, 22px);
+      font-weight: 600;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .40);
+      margin-bottom: 8px;
+    }
+
+    .p-hl {
+      font-size: clamp(20px, 1.6vw, 40px);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: #fff;
+      margin-bottom: clamp(32px, 3vw, 70px);
+      line-height: 1.3;
+    }
+
+    .p-ar {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .p-cur {
+      font-size: clamp(22px, 1.8vw, 44px);
+      font-weight: 700;
+      color: #fff;
+      padding-bottom: 5px;
+    }
+
+    .p-amt {
+      font-size: clamp(58px, 5.5vw, 120px);
+      font-weight: 700;
+      letter-spacing: -.05em;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .p-per {
+      font-size: clamp(14px, 1.1vw, 24px);
+      color: rgba(255, 255, 255, .35);
+      padding-bottom: 9px;
+    }
+
+    .p-use {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: clamp(12px, 0.9vw, 24px);
+      color: var(--accent);
+      background: rgba(255, 94, 58, .10);
+      padding: clamp(8px, 0.8vw, 16px) clamp(12px, 1vw, 24px);
+      border-radius: 6px;
+      margin: 6px 0;
+    }
+
+    .p-ns {
+      font-size: clamp(13px, 1vw, 26px);
+      color: rgba(255, 255, 255, .40);
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+
+    .p-div {
+      height: 1px;
+      background: rgba(255, 255, 255, .08);
+      margin: clamp(28px, 3vw, 64px) 0;
+    }
+
+    .p-inc {
+      font-size: clamp(11px, 0.8vw, 18px);
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .32);
+      margin-bottom: clamp(18px, 1.5vw, 36px);
+    }
+
+    .p-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(13px, 1.1vw, 26px);
+      margin-bottom: clamp(32px, 3vw, 70px);
+    }
+
+    .p-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(12px, 1.2vw, 24px);
+      font-size: clamp(14px, 1.1vw, 26px);
+      color: rgba(255, 255, 255, .72);
+      line-height: 1.5;
+    }
+
+    .ck {
+      width: clamp(18px, 1.5vw, 36px);
+      height: clamp(18px, 1.5vw, 36px);
+      background: rgba(255, 255, 255, .08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ck svg {
+      width: clamp(10px, 0.9vw, 20px);
+      height: clamp(10px, 0.9vw, 20px);
+      stroke: rgba(255, 255, 255, .65);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .p-fn {
+      font-family: var(--mono);
+      font-size: clamp(11px, 0.8vw, 20px);
+      color: rgba(255, 255, 255, .25);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ════════════ TESTIMONIALS ════════════ */
+    .tg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 2.5vw, 60px);
+      margin-top: clamp(56px, 5vw, 120px);
+    }
+
+    @media(max-width:860px) {
+      .tg {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tc {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      padding: clamp(32px, 3.5vw, 80px) clamp(28px, 3vw, 70px);
+      transition: box-shadow .2s, transform .2s;
+    }
+
+    .tc:hover {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .08);
+      transform: translateY(-3px);
+    }
+
+    .stars {
+      color: #F59E0B;
+      font-size: clamp(14px, 1.2vw, 26px);
+      letter-spacing: 2px;
+      margin-bottom: clamp(20px, 2vw, 48px);
+    }
+
+    .tq {
+      font-size: clamp(15px, 1.2vw, 28px);
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.65;
+      margin-bottom: clamp(24px, 2.5vw, 56px);
+    }
+
+    .tau {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 1.2vw, 24px);
+      padding-top: clamp(20px, 2vw, 48px);
+      border-top: 1px solid var(--border);
+    }
+
+    .tav {
+      width: clamp(40px, 3.5vw, 80px);
+      height: clamp(40px, 3.5vw, 80px);
+      background: var(--off);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(14px, 1.2vw, 28px);
+      font-weight: 700;
+      color: var(--grey);
+      flex-shrink: 0;
+    }
+
+    .tn {
+      font-size: clamp(13px, 1vw, 24px);
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .tr {
+      font-size: clamp(12px, 0.9vw, 22px);
+      color: var(--grey);
+      margin-top: 2px;
+    }
+
+    /* ════════════ FAQ ════════════ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(40px, 6vw, 120px);
+      align-items: flex-start;
+      margin-top: clamp(40px, 5vw, 80px);
+    }
+
+    @media(max-width:900px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .faq-l h2 {
+      margin: 16px 0 24px;
+    }
+
+    .faq-l p {
+      color: var(--grey);
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .fi {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fi:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .fq {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(20px, 2vw, 40px) 0;
+      cursor: pointer;
+      gap: 20px;
+      user-select: none;
+    }
+
+    .fqt {
+      font-size: clamp(15px, 1.1vw, 24px);
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .ft {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: clamp(20px, 1.5vw, 32px);
+      line-height: 1;
+      color: var(--grey);
+      font-weight: 400;
+      transition: transform .25s, color .2s;
+    }
+
+    .fi.open .ft {
+      color: var(--dark);
+      transform: rotate(45deg);
+    }
+
+    .fa {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .fi.open .fa {
+      max-height: 600px;
+    }
+
+    .fai {
+      padding: 0 clamp(20px, 4vw, 60px) clamp(22px, 2vw, 44px) 0;
+      font-size: clamp(14px, 1vw, 22px);
+      color: var(--grey);
+      line-height: 1.65;
+    }
+
+    /* ════════════ FINAL CTA ════════════ */
+    .cta-sec {
+      background: var(--dark);
+      padding: clamp(120px, 10vw, 240px) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 94, 58, .10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-sec h2 {
+      color: #fff;
+      max-width: clamp(640px, 50vw, 2000px);
+      margin: 0 auto 20px;
+    }
+
+    .cta-sec .sub {
+      color: rgba(255, 255, 255, .48);
+      max-width: clamp(600px, 45vw, 1800px);
+      margin: 0 auto 0;
+      font-size: clamp(17px, 1.4vw, 52px);
+      line-height: 1.60;
+    }
+
+    .cn {
+      font-family: var(--mono);
+      font-size: clamp(11px, 0.8vw, 36px);
+      color: rgba(255, 255, 255, .26);
+      text-align: center;
+    }
+
+    /* ════════════ FOOTER ════════════ */
+    .foot {
+      background: #1A1C21;
+      padding: clamp(72px, 6vw, 160px) 0 0;
+      width: 100%;
+    }
+
+    .foot-inner {
+      width: 100%;
+      padding: 0 clamp(24px, 4vw, 100px);
+    }
+
+    .fg {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: clamp(48px, 4vw, 100px);
+      padding-bottom: clamp(56px, 5vw, 120px);
+    }
+
+    @media(max-width:860px) {
+      .fg {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:540px) {
+      .fg {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .fl {
+      font-size: clamp(20px, 1.8vw, 44px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .ft2 {
+      font-size: clamp(13px, 1vw, 24px);
+      color: rgba(255, 255, 255, .35);
+      line-height: 1.65;
+      max-width: clamp(240px, 20vw, 500px);
+    }
+
+    .fh {
+      font-size: clamp(12px, 0.9vw, 22px);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .30);
+      margin-bottom: clamp(18px, 1.5vw, 36px);
+    }
+
+    .ful {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, 1.1vw, 24px);
+    }
+
+    .ful a {
+      font-size: clamp(14px, 1.1vw, 26px);
+      color: rgba(255, 255, 255, .48);
+      transition: color .15s;
+    }
+
+    .ful a:hover {
+      color: #fff;
+    }
+
+    .fb {
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      padding: clamp(20px, 2vw, 44px) 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .fcp {
+      font-size: clamp(12px, 0.9vw, 22px);
+      color: rgba(255, 255, 255, .22);
+    }
+
+    .fac {
+      font-family: var(--mono);
+      font-size: clamp(11px, 0.8vw, 20px);
+      color: var(--accent);
+      letter-spacing: .04em;
+    }
+
+    /* Utils */
+    .mt16 {
+      margin-top: 16px;
+    }
+
+    .mt24 {
+      margin-top: 24px;
+    }
+
+    .mt32 {
+      margin-top: 32px;
+    }
+  </style>
+  <script>
+    // All functions defined here in <head> so they're always available
+    // before any onclick handlers fire, regardless of Cloudflare injection below.
+
+    function switchTab(index, btn) {
+      var seg = btn.closest('.tab-seg');
+      seg.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var panels = btn.closest('.wrap').querySelectorAll('.tab-panel');
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      panels[index].classList.add('active');
+    }
+
+    function oM() { document.getElementById('mob').classList.add('on'); document.body.style.overflow = 'hidden'; }
+    function cM() { document.getElementById('mob').classList.remove('on'); document.body.style.overflow = ''; }
+
+    function tFaq(btn) {
+      var item = btn.closest('.fi');
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.fi.open').forEach(function (i) { i.classList.remove('open'); });
+      if (!open) item.classList.add('open');
+    }
+
+    // Nav + counters need DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      // Nav scroll
+      window.addEventListener('scroll', function () {
+        document.getElementById('nav').classList.toggle('on', window.scrollY > 60);
+      });
+
+      // Counter animation
+      var animated = false;
+      function runCounters() {
+        if (animated) return;
+        animated = true;
+        document.querySelectorAll('.sn[data-target]').forEach(function (el) {
+          var end = parseInt(el.dataset.target);
+          var suffix = el.dataset.sfx || '';
+          var start = null;
+          var duration = 1400;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var e = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(e * end) + suffix;
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = end + suffix;
+          }
+          requestAnimationFrame(step);
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) runCounters();
+        }, { threshold: 0.2 }).observe(document.querySelector('.sb'));
+      } else {
+        runCounters();
+      }
+    });
+  </script>
 </head>
+
 <body>
 
-<!-- ═══ Mobile Overlay ════════════════════════════════════════════ -->
-<div class="mob" id="mob">
-  <button class="mob-x" onclick="cM()" aria-label="Close">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-  </button>
-  <a href="#solutions"    onclick="cM()">Solutions</a>
-  <a href="#how-it-works" onclick="cM()">Systems</a>
-  <a href="#our-process"  onclick="cM()">Our Process</a>
-  <a href="#pricing"      onclick="cM()">Pricing</a>
-  <a href="#faq"          onclick="cM()">FAQ</a>
-  <a href="#book" class="btn accent" onclick="cM()">Book a Call</a>
-</div>
-
-<!-- ═══ Nav ══════════════════════════════════════════════════════ -->
-<nav class="nav" id="nav">
-  <div class="wrap">
-    <div class="nav-in">
-      <a href="#" class="logo"><span class="ndot"></span>SuccessForce</a>
-      <ul class="nav-ul">
-        <li><a href="#solutions">Solutions</a></li>
-        <li><a href="#how-it-works">Systems</a></li>
-        <li><a href="#our-process">Our Process</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <div class="nav-r">
-        <a href="#book" class="btn accent sm nc">Book a Strategy Call</a>
-        <button class="hbg" onclick="oM()" aria-label="Menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        </button>
-      </div>
-    </div>
+  <!-- ═══ Mobile Overlay ════════════════════════════════════════════ -->
+  <div class="mob" id="mob">
+    <button class="mob-x" onclick="cM()" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+        stroke-linecap="round">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+    <a href="#solutions" onclick="cM()">Solutions</a>
+    <a href="#how-it-works" onclick="cM()">Systems</a>
+    <a href="#our-process" onclick="cM()">Our Process</a>
+    <a href="#pricing" onclick="cM()">Pricing</a>
+    <a href="#faq" onclick="cM()">FAQ</a>
+    <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent"
+      onclick="cM()">Get Your Audit</a>
   </div>
-</nav>
 
-<!-- ═══ §01 Hero ═════════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="wrap">
-    <div style="display:flex;justify-content:center;margin-bottom:16px" class="h-a1">
-      <div class="badge">
-        <span class="badge-pill">Revenue Automation Agency</span>
-      </div>
-    </div>
-    <p class="h-a1" style="text-align:center;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px">Revenue &nbsp;·&nbsp; Efficiency &nbsp;·&nbsp; Peace of Mind</p>
-    <h1 class="h-a2">Make <em>more money.</em><br>Buy back the time<br>to <em>enjoy it.</em></h1>
-    <p class="hero-sub h-a3">Right now, leads are going cold, calls are going unanswered, and follow-ups are falling through the cracks — not because your team isn't working hard enough, but because no system is working hard enough for them. We fix that.</p>
-    <div class="hero-ctas h-a4">
-      <a href="#book" class="btn accent lg">
-        Book a Strategy Call
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#how-it-works" class="btn outline-w lg">See How It Works</a>
-    </div>
-    <div class="proof h-a4">
-      <div class="pv"><span class="pn">24/7</span><span class="pl">Lead Coverage</span></div>
-      <div class="pd"></div>
-      <div class="pv"><span class="pn">&lt;10s</span><span class="pl">Speed to Lead</span></div>
-      <div class="pd"></div>
-      <div class="pv"><span class="pn">1–2 wk</span><span class="pl">Time to Live</span></div>
-      <div class="pd"></div>
-      <div class="pv"><span class="pn">0</span><span class="pl">Extra Headcount</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ §02 Tech Strip ═══════════════════════════════════════════ -->
-
-<!-- ═══ §03 Three Pillars ════════════════════════════════════════ -->
-<section id="solutions">
-  <div class="wrap">
-    <div class="sh">
-      <span class="eyebrow">What We Deliver</span>
-      <h2>Three outcomes.<br>One integrated system.</h2>
-      <p class="lg">We build custom revenue automation systems designed to grow your revenue fast, then scale it consistently — while eliminating the operational drag that slows most businesses down.</p>
-    </div>
-    <div class="pg">
-
-      <!-- Pillar 1 -->
-      <div class="pillar">
-        <div class="pillar-acc"></div>
-        <div class="pil-n">01</div>
-        <div class="ib acc">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <div class="pil-tr">
-          <h4>Scale Revenue</h4>
-          <span class="pb">Priority #1</span>
-        </div>
-        <p class="pil-sh">Turn every missed call into booked revenue</p>
-        <p style="font-size:14px">Voice AI agents answer every inquiry instantly — 24/7, across every channel. No more leads going cold while your team sleeps.</p>
-        <ul class="pil-list">
-          <li>Instant lead capture &amp; follow-up</li>
-          <li>Automated appointment booking</li>
-          <li>Outbound lead reactivation</li>
-          <li>24/7 sales coverage</li>
-          <li>Speed-to-lead under 60 seconds</li>
-          <li>Upsell &amp; cross-sell triggers</li>
+  <!-- ═══ Nav ══════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="wrap">
+      <div class="nav-in">
+        <a href="#" class="logo"><span class="ndot"></span>SuccessForce</a>
+        <ul class="nav-ul">
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#how-it-works">Systems</a></li>
+          <li><a href="#our-process">Our Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
-      </div>
-
-      <!-- Pillar 2 -->
-      <div class="pillar">
-        <div class="pillar-acc"></div>
-        <div class="pil-n">02</div>
-        <div class="ib acc">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        <div class="nav-r">
+          <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
+            class="btn accent sm nc">Claim Your Free Audit</a>
+          <button class="hbg" onclick="oM()" aria-label="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+              stroke-linecap="round">
+              <path d="M3 12h18M3 6h18M3 18h18" />
+            </svg>
+          </button>
         </div>
-        <div class="pil-tr"><h4>Increase Business Efficiency</h4></div>
-        <p class="pil-sh">Stop doing manually what machines do better</p>
-        <p style="font-size:14px">Intelligent automations connect your entire tech stack, eliminating the repetitive admin that eats your team's day.</p>
-        <ul class="pil-list">
-          <li>Auto CRM updates &amp; data sync</li>
-          <li>Smart call routing &amp; escalation</li>
-          <li>Automated follow-up sequences</li>
-          <li>Duplicate data entry eliminated</li>
-          <li>Real-time reporting &amp; visibility</li>
-          <li>Internal workflow automation</li>
-        </ul>
-      </div>
-
-      <!-- Pillar 3 -->
-      <div class="pillar">
-        <div class="pillar-acc"></div>
-        <div class="pil-n">03</div>
-        <div class="ib acc">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="pil-tr"><h4>Keep Your Sanity Intact</h4></div>
-        <p class="pil-sh">Reclaim focus. End the operational chaos</p>
-        <p style="font-size:14px">Remove endless micro-tasks, after-hours stress, and the burnout that comes with managing everything manually.</p>
-        <ul class="pil-list">
-          <li>Eliminate after-hours call pressure</li>
-          <li>Prevent Monday morning pileups</li>
-          <li>Reduce repetitive phone work</li>
-          <li>Free your team for high-value work</li>
-          <li>Remove founder dependence bottlenecks</li>
-          <li>Predictable, consistent processes</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Stats Band ════════════════════════════════════════════════ -->
-<div class="sb">
-  <div class="wrap">
-    <div class="sr">
-      <div><div class="sn" data-target="89" data-sfx="%">89%</div><div class="sl">Avg Response Time Reduction</div></div>
-      <div><div class="sn" data-target="67" data-sfx="%">67%</div><div class="sl">Avg Booking Rate Increase</div></div>
-      <div><div class="sn">22→4%</div><div class="sl">No-Show Rate Improvement</div></div>
-      <div><div class="sn" data-target="3" data-sfx="x">3x</div><div class="sl">Avg ROI in Month One</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ §05 Problems ═════════════════════════════════════════════ -->
-<section class="bg-alt" id="problems">
-  <div class="wrap">
-    <div class="sh">
-      <span class="eyebrow">Solutions</span>
-      <h2>Problems we solve —<br>so you don't have to.</h2>
-      <p class="lg">Every system we build targets a specific business pain point. Here's what our clients stop worrying about after working with us.</p>
-    </div>
-
-    <div class="tab-wrap">
-      <div class="tab-seg">
-        <button class="tab-btn active" onclick="switchTab(0,this)">Revenue Leaks</button>
-        <button class="tab-btn" onclick="switchTab(1,this)">Operational Chaos</button>
-        <button class="tab-btn" onclick="switchTab(2,this)">Team Burnout</button>
       </div>
     </div>
+  </nav>
 
-    <!-- ── Tab 0: Revenue Leaks — 9 cards, impact order ── -->
-    <div class="tab-panel active">
-      <div class="icard-g">
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <h5>Inquiries Going Unanswered</h5>
-          </div>
-          <p>Every missed call, unanswered form, or ignored DM is a prospect handed directly to a competitor. During campaigns and busy periods, the overflow alone costs more than the entire system.</p>
+  <!-- ═══ §01 Hero ═════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="wrap">
+      <div style="display:flex;justify-content:center;margin-bottom:16px" class="h-a1">
+        <div class="badge">
+          <span class="badge-pill">Revenue Automation Agency</span>
         </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <h5>Slow Speed-to-Lead</h5>
-          </div>
-          <p>The first business to respond wins the deal — consistently and measurably. Most teams take hours to follow up. AI responds in under 60 seconds, around the clock, before the prospect has considered anyone else.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
-            <h5>After-Hours Revenue Loss</h5>
-          </div>
-          <p>30–40% of inbound inquiries arrive outside business hours. Every single one is a potential booking your team currently misses — and a competitor with 24/7 coverage quietly captures instead.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></div>
-            <h5>Appointment No-Shows</h5>
-          </div>
-          <p>Confirmed bookings still leak revenue. Multi-touch confirmations, timed reminders, and instant rescheduling protect every appointment from drop-off — without a single manual follow-up from your team.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 3H2l8 9.46V19l4 2v-8.54z"/></svg></div>
-            <h5>Wasting Hours on Unqualified Leads</h5>
-          </div>
-          <p>Your best salespeople spend their days on prospects who were never going to buy. AI qualifies every lead before a human gets involved — so your team only has real conversations with real buyers.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg></div>
-            <h5>Inconsistent Sales Follow-Up</h5>
-          </div>
-          <p>High performers follow up five times. Everyone else stops at two. Active prospects slip away not because they said no but because no one followed through. AI runs the same high-quality sequence for every single prospect, without exception.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5"/></svg></div>
-            <h5>Cold Leads Rotting in Your CRM</h5>
-          </div>
-          <p>Old inquiries and abandoned conversations represent recoverable revenue sitting untouched. AI re-engages them with the right message at the right moment — before they make a decision with someone else.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zM12 6v6l4 2"/></svg></div>
-            <h5>Missed Renewal Opportunities</h5>
-          </div>
-          <p>Subscriptions, retainers, and service contracts expire quietly without notice. By the time you realize, the customer has already moved on. Proactive outreach before every renewal date recovers this silent churn before it becomes permanent.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6"/></svg></div>
-            <h5>Buying Signals Going Unnoticed</h5>
-          </div>
-          <p>Customers signal readiness to upgrade constantly — but teams are too busy to act on it. AI identifies intent in real time and triggers the right upsell or cross-sell conversation at the exact moment the customer is most receptive.</p>
-        </div>
-
       </div>
-    </div>
-
-    <!-- ── Tab 1: Operational Chaos — 9 cards, impact order ── -->
-    <div class="tab-panel">
-      <div class="icard-g">
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5"/></svg></div>
-            <h5>Hours Lost to Manual Data Entry</h5>
-          </div>
-          <p>Call notes, CRM updates, post-call summaries — it adds up to hours every day of skilled people doing work a machine should handle. Every interaction is automatically logged, structured, and synced across every connected system.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></div>
-            <h5>Follow-Ups Falling Through the Cracks</h5>
-          </div>
-          <p>Leads get forgotten, callbacks never happen, and tasks slip through when someone is busy or distracted. Every customer action triggers the exact right response automatically — nothing relies on someone remembering.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-            <h5>Calls Landing With the Wrong Person</h5>
-          </div>
-          <p>Misdirected calls, botched internal transfers, and lost customer context erode trust and waste everyone's time. Every call routes to the right person instantly based on intent and urgency — with full context already attached.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6M3 18a3 3 0 006 0v-3a3 3 0 00-6 0v3zM21 18a3 3 0 01-6 0v-3a3 3 0 016 0v3z"/></svg></div>
-            <h5>Support Team Drowning in Repeat Questions</h5>
-          </div>
-          <p>The same 10 questions arrive on repeat all day, consuming your most responsive people. AI resolves common questions instantly and routes genuine issues to the right human — so your team handles complexity, not repetition.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-            <h5>Teams Acting as Manual Glue Between Tools</h5>
-          </div>
-          <p>When CRM, calendar, inbox, and task tools don't talk to each other, a person becomes the connection layer — spending their day copy-pasting instead of delivering value. Automation connects every tool directly so no one has to.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
-            <h5>Flying Blind Without Clean Data</h5>
-          </div>
-          <p>Decisions get made on gut feel because the data is scattered, stale, or buried in spreadsheets no one fully trusts. Automated logging and activity tracking means reports are always accurate, always current, and always actionable.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg></div>
-            <h5>Staff Tied Up With Routine Requests</h5>
-          </div>
-          <p>Scheduling, order status, basic inquiries, and standard service requests consume people who should be solving harder problems. Routine requests are handled, tracked, and resolved automatically — freeing your team entirely.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 9H11a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-9a2 2 0 00-2-2zM5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></div>
-            <h5>The Same Data Entered Into Multiple Systems</h5>
-          </div>
-          <p>Customer information gets typed into CRM, then into the ticketing tool, then into the spreadsheet, then into the calendar. Every duplicate entry is wasted time and a new opportunity for an error that causes a problem downstream.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
-            <h5>Context Lost Between Departments</h5>
-          </div>
-          <p>When a customer moves from sales to onboarding to support, critical context disappears with each handoff. The customer repeats themselves, trust erodes, and your team looks disorganized. Handoffs happen automatically with full context intact.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ── Tab 2: Team Burnout — 9 cards, impact order ── -->
-    <div class="tab-panel">
-      <div class="icard-g">
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M13.73 21a2 2 0 01-3.46 0M18.63 13A17.89 17.89 0 0118 8M6.26 6.26A5.86 5.86 0 006 8c0 7-3 9-3 9h14M18 8a6 6 0 00-9.33-5M1 1l22 22"/></svg></div>
-            <h5>Staff Expected to Be Reachable 24/7</h5>
-          </div>
-          <p>When the business depends on people being available around the clock, burnout and turnover are only a matter of time. AI handles every after-hours interaction so your team clocks out — and actually stays out.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-            <h5>Front Desk Overload</h5>
-          </div>
-          <p>Reception and admin staff spend their days fielding the same questions, booking the same appointments, and managing the same routine calls on repeat. AI absorbs all of it — your team handles what actually needs a human brain.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-            <h5>Team Burnout from Repetitive Work</h5>
-          </div>
-          <p>Talented people don't leave for better pay — they leave because their days are full of work that shouldn't require their talent. The relentless grind of admin, chasing, and re-entry slowly erodes performance before it becomes a resignation letter.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M11 1a4 4 0 00-4 4v4H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V11a2 2 0 00-2-2h-2V5a4 4 0 00-4-4h-2z"/></svg></div>
-            <h5>Founder Trapped in Daily Operations</h5>
-          </div>
-          <p>The same routine questions, small approvals, and micro-tasks keep landing on your plate because there's no system to catch them. AI handles the noise so you can work on the business — not in it — every single day.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></div>
-            <h5>Monday Morning Backlog Dread</h5>
-          </div>
-          <p>Every weekend generates a pile of unanswered inquiries, unprocessed requests, and missed follow-ups that hits the team like a wall every Monday. AI keeps everything moving so weeks start manageable — not immediately underwater.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01"/></svg></div>
-            <h5>Volume Spikes That Break Teams</h5>
-          </div>
-          <p>Seasonal rushes and campaign launches overwhelm human capacity exactly when performance matters most. Response times collapse, quality degrades, and the team absorbs the fallout long after the spike passes. AI scales instantly — no warning needed.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h5>Urgent Issues Getting Buried in the Queue</h5>
-          </div>
-          <p>A frustrated customer or a critical situation sits in the same inbox as routine inquiries, invisible until it becomes a crisis. AI detects urgency automatically and routes critical issues to the right person before small problems become expensive ones.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <h5>Constant Interruptions Destroying Focused Work</h5>
-          </div>
-          <p>Every reminder to follow up, every nudge to update the CRM, every routine notification pulls your team out of deep work. When nothing is automated, everything becomes an interruption — and real productivity never gets a chance to happen.</p>
-        </div>
-
-        <div class="icard">
-          <div class="icard-hd">
-            <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-            <h5>Business Growing Faster Than Your Processes</h5>
-          </div>
-          <p>What worked at $500K breaks at $1M. The manual systems, the informal handoffs, the "everyone just knows" approach — they create chaos the moment volume increases. Automation builds the infrastructure your growth actually needs before the wheels come off.</p>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══ §06 How It Works ═════════════════════════════════════════ -->
-<section id="how-it-works">
-  <div class="wrap">
-    <div class="sh">
-      <span class="eyebrow">The Systems We Build</span>
-      <h2>Built custom. Deployed fast.<br>Runs forever.</h2>
-      <p class="lg">We don't sell software subscriptions. We build fully custom, end-to-end automation systems tailored to your specific business, workflows, and revenue goals.</p>
-    </div>
-    <div class="how-g">
-      <div class="hi">
-        <div class="hs">01</div>
-        <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-        <h5>Intelligent Voice Agent</h5>
-        <p>Custom-trained AI voice agents handle inbound calls, qualify leads, book appointments, and answer FAQs — available every minute of the day.</p>
-        <div class="hi-acc"></div>
-      </div>
-      <div class="hi">
-        <div class="hs">02</div>
-        <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-        <h5>Intelligent Workflow Automation</h5>
-        <p>Behind every voice interaction sits a powerful workflow engine connecting your CRM, calendar, SMS, and email. Data flows automatically — no dropped balls.</p>
-        <div class="hi-acc"></div>
-      </div>
-      <div class="hi">
-        <div class="hs">03</div>
-        <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5"/></svg></div>
-        <h5>Seamless Stack Integration</h5>
-        <p>Every system plugs into what you already use. No rip-and-replace. Your existing tools become exponentially more powerful through connected intelligence.</p>
-        <div class="hi-acc"></div>
-      </div>
-      <div class="hi">
-        <div class="hs">04</div>
-        <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6"/></svg></div>
-        <h5>Revenue Engine, Live in Weeks</h5>
-        <p>We deploy, train, and hand you a fully operational system. Most clients go live in 1–2 weeks and see measurable impact from day one.</p>
-        <div class="hi-acc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ §07 Our Process ══════════════════════════════════════════ -->
-<section class="bg-alt" id="our-process">
-  <div class="wrap">
-    <div class="sh">
-      <span class="eyebrow">Our Process</span>
-      <h2>From first call to fully live<br>in 4 clear steps.</h2>
-      <p class="lg">A predictable path from day one. No hand-wavy discovery phases — focused execution that gets your system generating revenue fast.</p>
-    </div>
-    <div class="proc-bar">
-      <div class="proc-step">
-        <div class="proc-n">01</div>
-        <h5>Discovery Call</h5>
-        <p>We map your current workflow, pinpoint where revenue is leaking, and define exactly what the system needs to do.</p>
-        <div class="proc-acc"></div>
-      </div>
-      <div class="proc-step">
-        <div class="proc-n">02</div>
-        <h5>System Design</h5>
-        <p>Custom architecture built for your business — agent logic, automation flows, integration map, and handoff rules.</p>
-        <div class="proc-acc"></div>
-      </div>
-      <div class="proc-step">
-        <div class="proc-n">03</div>
-        <h5>Build &amp; Train</h5>
-        <p>We configure, test, and refine against real scenarios. You approve before anything goes live — no surprises.</p>
-        <div class="proc-acc"></div>
-      </div>
-      <div class="proc-step">
-        <div class="proc-n">04</div>
-        <h5>Go Live</h5>
-        <p>System deployed, monitored, and continuously optimized. Most clients see measurable results within the first week.</p>
-        <div class="proc-acc"></div>
-      </div>
-    </div>
-    <div style="margin-top:48px;text-align:center">
-      <span class="eyebrow" style="display:inline-block;margin-bottom:16px">Integrates with tools you already use</span>
-      <div class="int-row">
-        <div class="int-b"><span class="int-d"></span>HubSpot</div>
-        <div class="int-b"><span class="int-d"></span>Salesforce</div>
-        <div class="int-b"><span class="int-d"></span>GoHighLevel</div>
-        <div class="int-b"><span class="int-d"></span>Pipedrive</div>
-        <div class="int-b"><span class="int-d"></span>Zoho CRM</div>
-        <div class="int-b"><span class="int-d"></span>Calendly</div>
-        <div class="int-b"><span class="int-d"></span>Google Calendar</div>
-        <div class="int-b"><span class="int-d"></span>Outlook</div>
-        <div class="int-b"><span class="int-d"></span>Twilio</div>
-        <div class="int-b"><span class="int-d"></span>Slack</div>
-        <div class="int-b"><span class="int-d"></span>Zapier</div>
-        <div class="int-b"><span class="int-d"></span>Make</div>
-        <div class="int-b"><span class="int-d"></span>Airtable</div>
-        <div class="int-b"><span class="int-d"></span>Notion</div>
-        <div class="int-b"><span class="int-d"></span>Google Sheets</div>
-        <div class="int-b"><span class="int-d"></span>Stripe</div>
-        <div class="int-b">+ many more...</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ §08 Pricing ══════════════════════════════════════════════ -->
-<section id="pricing">
-  <div class="wrap">
-    <div class="pw">
-      <div class="pi">
-        <span class="eyebrow">Pricing</span>
-        <h2>Simple pricing.<br>Serious results.</h2>
-        <p>One monthly retainer covers everything — custom build, deployment, monitoring, and ongoing optimization. You pay for call minutes used, nothing more.</p>
-        <ul class="pfl mt32">
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Full custom system build (one-time $5,000 setup)</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Voice AI agent configuration &amp; training</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Workflow automation setup (unlimited)</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>CRM &amp; calendar integration</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>SMS &amp; email follow-up sequences</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Monthly performance reporting</li>
-          <li><span class="cc"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Ongoing optimization &amp; support</li>
-        </ul>
-        <a href="#book" class="btn outline mt32">Talk to Us First — No Pressure</a>
-      </div>
-      <div class="pcard">
-        <div class="p-plan">Setup + Monthly Retainer</div>
-        <div class="p-hl">Your AI Revenue Engine,<br>Running 24/7</div>
-        <div style="display:flex;align-items:center;gap:20px;margin-bottom:8px;flex-wrap:wrap">
-          <div>
-            <div style="font-family:var(--mono);font-size:10px;font-weight:500;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Setup Fee</div>
-            <div style="display:flex;align-items:flex-end;gap:2px">
-              <span class="p-cur" style="font-size:16px;padding-bottom:3px">$</span>
-              <span style="font-size:36px;font-weight:700;letter-spacing:-.04em;color:#fff;line-height:1">5,000</span>
-            </div>
-          </div>
-          <div style="font-size:22px;color:rgba(255,255,255,.20);font-weight:300;padding-bottom:4px">+</div>
-          <div>
-            <div style="font-family:var(--mono);font-size:10px;font-weight:500;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Monthly Retainer</div>
-            <div class="p-ar" style="margin-bottom:0">
-              <span class="p-cur">$</span>
-              <span class="p-amt">497</span>
-              <span class="p-per">/month</span>
-            </div>
-          </div>
-        </div>
-        <div><span class="p-use">+ $0.60 / minute of calls</span></div>
-        <p class="p-ns">Avg call: 2–4 min · 300 calls/mo ≈ $540 in usage.<br>One converted lead typically covers months of service.</p>
-        <div class="p-div"></div>
-        <div class="p-inc">Everything Included</div>
-        <ul class="p-list">
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom AI voice agent (inbound &amp; outbound)</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Unlimited automation workflows</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>CRM + calendar + SMS integration</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>After-hours &amp; 24/7 call handling</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Lead qualification &amp; routing logic</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Appointment booking &amp; reminders</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Follow-up email &amp; SMS sequences</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Live dashboard &amp; monthly reporting</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>System monitoring &amp; optimization</li>
-        </ul>
-        <a href="#book" class="btn accent full">
-          Book a Strategy Call
-          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <p class="h-a1"
+        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px">
+        Revenue &nbsp;·&nbsp; Efficiency &nbsp;·&nbsp; Peace of Mind</p>
+      <h1 class="h-a2">Make <em>more money.</em> Buy back the time to <em>enjoy it.</em></h1>
+      <p class="hero-sub h-a3">Right now, leads are going cold, calls are going unanswered, and follow-ups are falling
+        through the cracks — not because your team isn't working hard enough, but because no system is working hard
+        enough for them. We fix that.</p>
+      <div class="hero-ctas h-a4">
+        <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent lg">
+          See Where I'm Bleeding Revenue
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </a>
-        <p class="p-fn">One-time setup fee covers full custom build &amp; deployment.<br>No long-term contracts on retainer. Cancel anytime after setup.</p>
+        <a href="#how-it-works" class="btn outline-w lg">See How It Works</a>
+      </div>
+      <div class="proof h-a4">
+        <div class="pv"><span class="pn">24/7</span><span class="pl">Lead Coverage</span></div>
+        <div class="pd"></div>
+        <div class="pv"><span class="pn">&lt;10s</span><span class="pl">Speed to Lead</span></div>
+        <div class="pd"></div>
+        <div class="pv"><span class="pn">1–2 wk</span><span class="pl">Time to Live</span></div>
+        <div class="pd"></div>
+        <div class="pv"><span class="pn">3x</span><span class="pl">Avg ROI</span></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ §09 Testimonials ═════════════════════════════════════════ -->
-<section class="bg-alt">
-  <div class="wrap">
-    <div class="sh">
-      <span class="eyebrow">Client Results</span>
-      <h2>The businesses that stopped<br>leaving revenue on the table.</h2>
-    </div>
-    <div class="tg">
-      <div class="tc">
-        <div class="stars">★★★★★</div>
-        <p class="tq">"We were losing 30–40% of after-hours calls to competitors. Three weeks after going live, our booking rate jumped 67%. The AI handles it better than our old answering service ever did."</p>
-        <div class="tau"><div class="tav">M</div><div><div class="tn">Marcus D.</div><div class="tr">Owner, ProFlow HVAC</div></div></div>
-      </div>
-      <div class="tc">
-        <div class="stars">★★★★★</div>
-        <p class="tq">"The follow-up automation alone paid for the first 6 months. We're converting leads we would have completely lost before. Our sales team now only talks to pre-qualified, ready-to-buy prospects."</p>
-        <div class="tau"><div class="tav">L</div><div><div class="tn">Leila R.</div><div class="tr">Director, RapidRestore</div></div></div>
-      </div>
-      <div class="tc">
-        <div class="stars">★★★★★</div>
-        <p class="tq">"I used to spend 3 hours a day on the phone. Now I look at a dashboard. The agent books jobs, confirms them, and sends reminders. My no-show rate dropped from 22% to 4%."</p>
-        <div class="tau"><div class="tav">J</div><div><div class="tn">James T.</div><div class="tr">Principal, TerraForm Landscaping</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ═══ §02 Tech Strip ═══════════════════════════════════════════ -->
 
-<!-- ═══ §10 FAQ ═══════════════════════════════════════════════════ -->
-<section id="faq">
-  <div class="wrap" style="max-width:760px">
-    <div class="sh">
-      <span class="eyebrow">FAQ</span>
-      <h2>Common questions,<br>straight answers.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does it take to go live?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training, integration, and testing — you just approve the final product before we flip the switch.</div></div>
+  <!-- ═══ §03 Three Pillars ════════════════════════════════════════ -->
+  <section id="solutions">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">What We Deliver</span>
+        <h2>Three outcomes. One integrated system.</h2>
+        <p class="lg">We build custom revenue automation systems designed to grow your revenue fast, then scale it
+          consistently — while eliminating the operational drag that slows most businesses down.</p>
       </div>
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">Do I need to change my current tech stack?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">No. Our systems are built to integrate with what you already use — CRM, calendar, email, SMS platforms. We connect to your tools; you don't need to replace them.</div></div>
-      </div>
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">What does $0.60/min for calls mean in practice?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div></div>
-      </div>
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">How does the Voice AI handle complex customer questions?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">We train the agent on your specific business — services, pricing, FAQs, policies, objection handling. For questions outside its knowledge base, it smoothly transfers to a human or schedules a callback. You define every boundary.</div></div>
-      </div>
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">What kinds of businesses do you work with?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">We work with service businesses generating $500K+ in annual revenue where the phone is a primary revenue channel — HVAC, restoration, legal, healthcare, real estate, landscaping, auto, and more. If your business lives and dies by the phone, we're built for you.</div></div>
-      </div>
-      <div class="fi">
-        <div class="fq" onclick="tFaq(this)"><span class="fqt">What happens after we go live?</span><span class="ft">+</span></div>
-        <div class="fa"><div class="fai">We monitor system performance, provide monthly reporting, and handle ongoing optimization as your business evolves. This isn't a set-it-and-forget-it deployment — we stay engaged to maximize your ROI.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="pg">
 
-<!-- ═══ §11 Final CTA ════════════════════════════════════════════ -->
-<section class="cta-sec" id="book">
-  <div class="wrap" style="max-width:900px">
-    <span class="eyebrow" style="color:rgba(255,255,255,.36);text-align:center;display:block">Get Started</span>
-    <h2>Stop losing revenue<br>to manual processes.</h2>
-    <p class="sub">Book a free 30-minute strategy call. We'll map out exactly where your business is leaking revenue and show you what an automated system would look like — no pitch, no pressure.</p>
-    <!-- Cal inline embed -->
-    <div style="width:100%;margin-top:40px;border-radius:12px;overflow:hidden;background:#fff">
-      <iframe
-        src="https://cal.com/opsaudit/book-audit?embed=true&hideEventTypeDetails=false&layout=month_view&brandColor=%23FF5E3A"
-        width="100%"
-        height="700"
-        frameborder="0"
-        allowfullscreen
-        style="display:block;border:none"
-        loading="lazy"
-        title="Book a Strategy Call — SuccessForce"
-      ></iframe>
-    </div>
-    <!-- Cal inline embed ends -->
-    <p class="cn" style="margin-top:20px">No commitment required · Results-first conversation</p>
-  </div>
-</section>
+        <!-- Pillar 1 -->
+        <div class="pillar">
+          <div class="pillar-acc"></div>
+          <div class="pil-n">01</div>
+          <div class="ib acc">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <div class="pil-tr">
+            <h4>Scale Revenue</h4>
+            <span class="pb">Priority #1</span>
+          </div>
+          <p class="pil-sh">Turn every missed call into booked revenue</p>
+          <p style="font-size:14px">Voice AI agents answer every inquiry instantly — 24/7, across every channel. No more
+            leads going cold while your team sleeps.</p>
+          <ul class="pil-list">
+            <li>Instant lead capture &amp; follow-up</li>
+            <li>Automated appointment booking</li>
+            <li>Outbound lead reactivation</li>
+            <li>24/7 sales coverage</li>
+            <li>Speed-to-lead under 60 seconds</li>
+            <li>Upsell &amp; cross-sell triggers</li>
+          </ul>
+        </div>
 
-<!-- ═══ Footer ════════════════════════════════════════════════════ -->
-<footer class="foot">
-  <div class="foot-inner">
-    <div class="fg">
-      <div>
-        <div class="fl"><span class="ndot"></span>SuccessForce</div>
-        <p class="ft2">We build custom revenue automation systems that help service businesses grow faster, operate smarter, and give founders their time back.</p>
+        <!-- Pillar 2 -->
+        <div class="pillar">
+          <div class="pillar-acc"></div>
+          <div class="pil-n">02</div>
+          <div class="ib acc">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+            </svg>
+          </div>
+          <div class="pil-tr">
+            <h4>Increase Business Efficiency</h4>
+          </div>
+          <p class="pil-sh">Stop doing manually what machines do better</p>
+          <p style="font-size:14px">Intelligent automations connect your entire tech stack, eliminating the repetitive
+            admin that eats your team's day.</p>
+          <ul class="pil-list">
+            <li>Auto CRM updates &amp; data sync</li>
+            <li>Smart call routing &amp; escalation</li>
+            <li>Automated follow-up sequences</li>
+            <li>Duplicate data entry eliminated</li>
+            <li>Real-time reporting &amp; visibility</li>
+            <li>Internal workflow automation</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar">
+          <div class="pillar-acc"></div>
+          <div class="pil-n">03</div>
+          <div class="ib acc">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div class="pil-tr">
+            <h4>Keep Your Sanity Intact</h4>
+          </div>
+          <p class="pil-sh">Reclaim focus. End the operational chaos</p>
+          <p style="font-size:14px">Remove endless micro-tasks, after-hours stress, and the burnout that comes with
+            managing everything manually.</p>
+          <ul class="pil-list">
+            <li>Eliminate after-hours call pressure</li>
+            <li>Prevent Monday morning pileups</li>
+            <li>Reduce repetitive phone work</li>
+            <li>Free your team for high-value work</li>
+            <li>Remove founder dependence bottlenecks</li>
+            <li>Predictable, consistent processes</li>
+          </ul>
+        </div>
+
       </div>
-      <div>
-        <div class="fh">Solutions</div>
-        <ul class="ful">
-          <li><a href="#">Scale Revenue</a></li>
-          <li><a href="#">Business Efficiency</a></li>
-          <li><a href="#">Voice AI Agents</a></li>
-          <li><a href="#">Workflow Automation</a></li>
-          <li><a href="#">CRM Integration</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="fh">Company</div>
-        <ul class="ful">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="fh">Get Started</div>
-        <p style="font-size:13px;color:rgba(255,255,255,.38);line-height:1.6;margin-bottom:18px">Ready to stop leaving revenue on the table?</p>
-        <a href="#book" class="btn accent sm">Book a Free Call</a>
-        <div style="margin-top:20px">
-          <a href="/cdn-cgi/l/email-protection#d4bcb1b8b8bb94a7a1b7b7b1a7a7b2bba6b7b1fab5bd" style="font-size:13px;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:8px">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
-            <span class="__cf_email__" data-cfemail="92faf7fefefdd2e1e7f1f1f7e1e1f4fde0f1f7bcf3fb">[email&#160;protected]</span>
-          </a>
+    </div>
+  </section>
+
+  <!-- ═══ Stats Band ════════════════════════════════════════════════ -->
+  <div class="sb">
+    <div class="wrap">
+      <div class="sr">
+        <div>
+          <div class="sn" data-target="89" data-sfx="%">89%</div>
+          <div class="sl">Avg Response Time Reduction</div>
+        </div>
+        <div>
+          <div class="sn" data-target="67" data-sfx="%">67%</div>
+          <div class="sl">Avg Booking Rate Increase</div>
+        </div>
+        <div>
+          <div class="sn">22→4%</div>
+          <div class="sl">No-Show Rate Improvement</div>
+        </div>
+        <div>
+          <div class="sn" data-target="3" data-sfx="x">3x</div>
+          <div class="sl">Avg ROI</div>
         </div>
       </div>
     </div>
-    <div class="fb">
-      <span class="fcp">&copy; 2026 SuccessForce. All rights reserv
+  </div>
+
+  <!-- ═══ §05 Problems ═════════════════════════════════════════════ -->
+  <section class="bg-alt" id="problems">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Solutions</span>
+        <h2>Problems we solve — so you don't have to.</h2>
+        <p class="lg">Every system we build targets a specific business pain point. Here's what our clients stop
+          worrying about after working with us.</p>
+      </div>
+
+      <div class="tab-wrap">
+        <div class="tab-seg">
+          <button class="tab-btn active" onclick="switchTab(0,this)">Revenue Leaks</button>
+          <button class="tab-btn" onclick="switchTab(1,this)">Operational Chaos</button>
+          <button class="tab-btn" onclick="switchTab(2,this)">Team Burnout</button>
+        </div>
+      </div>
+
+      <!-- ── Tab 0: Revenue Leaks — 9 cards, impact order ── -->
+      <div class="tab-panel active">
+        <div class="icard-g">
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg></div>
+              <h5>Inquiries Going Unanswered</h5>
+            </div>
+            <p>Every missed call, unanswered form, or ignored DM is a prospect handed directly to a competitor. During
+              campaigns and busy periods, the overflow alone costs more than the entire system.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg></div>
+              <h5>Slow Speed-to-Lead</h5>
+            </div>
+            <p>The first business to respond wins the deal — consistently and measurably. Most teams take hours to
+              follow up. AI responds in under 60 seconds, around the clock, before the prospect has considered anyone
+              else.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg></div>
+              <h5>After-Hours Revenue Loss</h5>
+            </div>
+            <p>30–40% of inbound inquiries arrive outside business hours. Every single one is a potential booking your
+              team currently misses — and a competitor with 24/7 coverage quietly captures instead.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                </svg></div>
+              <h5>Appointment No-Shows</h5>
+            </div>
+            <p>Confirmed bookings still leak revenue. Multi-touch confirmations, timed reminders, and instant
+              rescheduling protect every appointment from drop-off — without a single manual follow-up from your team.
+            </p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M22 3H2l8 9.46V19l4 2v-8.54z" />
+                </svg></div>
+              <h5>Wasting Hours on Unqualified Leads</h5>
+            </div>
+            <p>Your best salespeople spend their days on prospects who were never going to buy. AI qualifies every lead
+              before a human gets involved — so your team only has real conversations with real buyers.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3" />
+                </svg></div>
+              <h5>Inconsistent Sales Follow-Up</h5>
+            </div>
+            <p>High performers follow up five times. Everyone else stops at two. Active prospects slip away not because
+              they said no but because no one followed through. AI runs the same high-quality sequence for every single
+              prospect, without exception.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5" />
+                </svg></div>
+              <h5>Cold Leads Rotting in Your CRM</h5>
+            </div>
+            <p>Old inquiries and abandoned conversations represent recoverable revenue sitting untouched. AI re-engages
+              them with the right message at the right moment — before they make a decision with someone else.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zM12 6v6l4 2" />
+                </svg></div>
+              <h5>Missed Renewal Opportunities</h5>
+            </div>
+            <p>Subscriptions, retainers, and service contracts expire quietly without notice. By the time you realize,
+              the customer has already moved on. Proactive outreach before every renewal date recovers this silent churn
+              before it becomes permanent.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6" />
+                </svg></div>
+              <h5>Buying Signals Going Unnoticed</h5>
+            </div>
+            <p>Customers signal readiness to upgrade constantly — but teams are too busy to act on it. AI identifies
+              intent in real time and triggers the right upsell or cross-sell conversation at the exact moment the
+              customer is most receptive.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Tab 1: Operational Chaos — 9 cards, impact order ── -->
+      <div class="tab-panel">
+        <div class="icard-g">
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5" />
+                </svg></div>
+              <h5>Hours Lost to Manual Data Entry</h5>
+            </div>
+            <p>Call notes, CRM updates, post-call summaries — it adds up to hours every day of skilled people doing work
+              a machine should handle. Every interaction is automatically logged, structured, and synced across every
+              connected system.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" />
+                </svg></div>
+              <h5>Follow-Ups Falling Through the Cracks</h5>
+            </div>
+            <p>Leads get forgotten, callbacks never happen, and tasks slip through when someone is busy or distracted.
+              Every customer action triggers the exact right response automatically — nothing relies on someone
+              remembering.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg></div>
+              <h5>Calls Landing With the Wrong Person</h5>
+            </div>
+            <p>Misdirected calls, botched internal transfers, and lost customer context erode trust and waste everyone's
+              time. Every call routes to the right person instantly based on intent and urgency — with full context
+              already attached.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M3 18v-6a9 9 0 0118 0v6M3 18a3 3 0 006 0v-3a3 3 0 00-6 0v3zM21 18a3 3 0 01-6 0v-3a3 3 0 016 0v3z" />
+                </svg></div>
+              <h5>Support Team Drowning in Repeat Questions</h5>
+            </div>
+            <p>The same 10 questions arrive on repeat all day, consuming your most responsive people. AI resolves common
+              questions instantly and routes genuine issues to the right human — so your team handles complexity, not
+              repetition.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                </svg></div>
+              <h5>Teams Acting as Manual Glue Between Tools</h5>
+            </div>
+            <p>When CRM, calendar, inbox, and task tools don't talk to each other, a person becomes the connection layer
+              — spending their day copy-pasting instead of delivering value. Automation connects every tool directly so
+              no one has to.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M18 20V10M12 20V4M6 20v-6" />
+                </svg></div>
+              <h5>Flying Blind Without Clean Data</h5>
+            </div>
+            <p>Decisions get made on gut feel because the data is scattered, stale, or buried in spreadsheets no one
+              fully trusts. Automated logging and activity tracking means reports are always accurate, always current,
+              and always actionable.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M22 12h-6l-2 3h-4l-2-3H2M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z" />
+                </svg></div>
+              <h5>Staff Tied Up With Routine Requests</h5>
+            </div>
+            <p>Scheduling, order status, basic inquiries, and standard service requests consume people who should be
+              solving harder problems. Routine requests are handled, tracked, and resolved automatically — freeing your
+              team entirely.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M20 9H11a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-9a2 2 0 00-2-2zM5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                </svg></div>
+              <h5>The Same Data Entered Into Multiple Systems</h5>
+            </div>
+            <p>Customer information gets typed into CRM, then into the ticketing tool, then into the spreadsheet, then
+              into the calendar. Every duplicate entry is wasted time and a new opportunity for an error that causes a
+              problem downstream.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M9 18l6-6-6-6" />
+                </svg></div>
+              <h5>Context Lost Between Departments</h5>
+            </div>
+            <p>When a customer moves from sales to onboarding to support, critical context disappears with each handoff.
+              The customer repeats themselves, trust erodes, and your team looks disorganized. Handoffs happen
+              automatically with full context intact.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Tab 2: Team Burnout — 9 cards, impact order ── -->
+      <div class="tab-panel">
+        <div class="icard-g">
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M13.73 21a2 2 0 01-3.46 0M18.63 13A17.89 17.89 0 0118 8M6.26 6.26A5.86 5.86 0 006 8c0 7-3 9-3 9h14M18 8a6 6 0 00-9.33-5M1 1l22 22" />
+                </svg></div>
+              <h5>Staff Expected to Be Reachable 24/7</h5>
+            </div>
+            <p>When the business depends on people being available around the clock, burnout and turnover are only a
+              matter of time. AI handles every after-hours interaction so your team clocks out — and actually stays out.
+            </p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                </svg></div>
+              <h5>Front Desk Overload</h5>
+            </div>
+            <p>Reception and admin staff spend their days fielding the same questions, booking the same appointments,
+              and managing the same routine calls on repeat. AI absorbs all of it — your team handles what actually
+              needs a human brain.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                </svg></div>
+              <h5>Team Burnout from Repetitive Work</h5>
+            </div>
+            <p>Talented people don't leave for better pay — they leave because their days are full of work that
+              shouldn't require their talent. The relentless grind of admin, chasing, and re-entry slowly erodes
+              performance before it becomes a resignation letter.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M11 1a4 4 0 00-4 4v4H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V11a2 2 0 00-2-2h-2V5a4 4 0 00-4-4h-2z" />
+                </svg></div>
+              <h5>Founder Trapped in Daily Operations</h5>
+            </div>
+            <p>The same routine questions, small approvals, and micro-tasks keep landing on your plate because there's
+              no system to catch them. AI handles the noise so you can work on the business — not in it — every single
+              day.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                </svg></div>
+              <h5>Monday Morning Backlog Dread</h5>
+            </div>
+            <p>Every weekend generates a pile of unanswered inquiries, unprocessed requests, and missed follow-ups that
+              hits the team like a wall every Monday. AI keeps everything moving so weeks start manageable — not
+              immediately underwater.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4M12 17h.01" />
+                </svg></div>
+              <h5>Volume Spikes That Break Teams</h5>
+            </div>
+            <p>Seasonal rushes and campaign launches overwhelm human capacity exactly when performance matters most.
+              Response times collapse, quality degrades, and the team absorbs the fallout long after the spike passes.
+              AI scales instantly — no warning needed.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg></div>
+              <h5>Urgent Issues Getting Buried in the Queue</h5>
+            </div>
+            <p>A frustrated customer or a critical situation sits in the same inbox as routine inquiries, invisible
+              until it becomes a crisis. AI detects urgency automatically and routes critical issues to the right person
+              before small problems become expensive ones.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg></div>
+              <h5>Constant Interruptions Destroying Focused Work</h5>
+            </div>
+            <p>Every reminder to follow up, every nudge to update the CRM, every routine notification pulls your team
+              out of deep work. When nothing is automated, everything becomes an interruption — and real productivity
+              never gets a chance to happen.</p>
+          </div>
+
+          <div class="icard">
+            <div class="icard-hd">
+              <div class="iib"><svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg></div>
+              <h5>Business Growing Faster Than Your Processes</h5>
+            </div>
+            <p>What worked at $500K breaks at $1M. The manual systems, the informal handoffs, the "everyone just knows"
+              approach — they create chaos the moment volume increases. Automation builds the infrastructure your growth
+              actually needs before the wheels come off.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ §06 How It Works ═════════════════════════════════════════ -->
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">The Systems We Build</span>
+        <h2>Built custom. Deployed fast. Runs forever.</h2>
+        <p class="lg">We don't sell software subscriptions. We build fully custom, end-to-end automation systems
+          tailored to your specific business, workflows, and revenue goals.</p>
+      </div>
+      <div class="how-g">
+        <div class="hi">
+          <div class="hs">01</div>
+          <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2.84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10a16 16 0 006.72 6.72l.73-.84a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg></div>
+          <h5>Intelligent Voice Agent</h5>
+          <p>Custom-trained AI voice agents handle inbound calls, qualify leads, book appointments, and answer FAQs —
+            available every minute of the day.</p>
+          <div class="hi-acc"></div>
+        </div>
+        <div class="hi">
+          <div class="hs">02</div>
+          <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+            </svg></div>
+          <h5>Intelligent Workflow Automation</h5>
+          <p>Behind every voice interaction sits a powerful workflow engine connecting your CRM, calendar, SMS, and
+            email. Data flows automatically — no dropped balls.</p>
+          <div class="hi-acc"></div>
+        </div>
+        <div class="hi">
+          <div class="hs">03</div>
+          <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 4.24 2 7v10c0 2.76 4.48 5 10 5s10-2.24 10-5V7c0-2.76-4.48-5-10-5zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5M2 7c0 2.76 4.48 5 10 5s10-2.24 10-5" />
+            </svg></div>
+          <h5>Seamless Stack Integration</h5>
+          <p>Every system plugs into what you already use. No rip-and-replace. Your existing tools become exponentially
+            more powerful through connected intelligence.</p>
+          <div class="hi-acc"></div>
+        </div>
+        <div class="hi">
+          <div class="hs">04</div>
+          <div class="ib"><svg width="20" height="20" viewBox="0 0 24 24">
+              <path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6" />
+            </svg></div>
+          <h5>Revenue Engine, Live in Weeks</h5>
+          <p>We deploy, train, and hand you a fully operational system. Most clients go live in 1–2 weeks and see
+            measurable impact from day one.</p>
+          <div class="hi-acc"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ §07 Our Process ══════════════════════════════════════════ -->
+  <section class="bg-alt" id="our-process">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Our Process</span>
+        <h2>From first call to fully live in 4 clear steps.</h2>
+        <p class="lg">A predictable path from day one. No hand-wavy discovery phases — focused execution that gets your
+          system generating revenue fast.</p>
+      </div>
+      <div class="proc-bar">
+        <div class="proc-step">
+          <div class="proc-n">01</div>
+          <h5>Discovery Call</h5>
+          <p>We map your current workflow, pinpoint where revenue is leaking, and define exactly what the system needs
+            to do.</p>
+          <div class="proc-acc"></div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-n">02</div>
+          <h5>System Design</h5>
+          <p>Custom architecture built for your business — agent logic, automation flows, integration map, and handoff
+            rules.</p>
+          <div class="proc-acc"></div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-n">03</div>
+          <h5>Build &amp; Train</h5>
+          <p>We configure, test, and refine against real scenarios. You approve before anything goes live — no
+            surprises.</p>
+          <div class="proc-acc"></div>
+        </div>
+        <div class="proc-step">
+          <div class="proc-n">04</div>
+          <h5>Go Live</h5>
+          <p>System deployed, monitored, and continuously optimized. Most clients see measurable results within the
+            first week.</p>
+          <div class="proc-acc"></div>
+        </div>
+      </div>
+      <div style="margin-top:48px;text-align:center">
+        <span class="eyebrow" style="display:inline-block;margin-bottom:16px">Integrates with tools you already
+          use</span>
+        <div class="int-row">
+          <div class="int-b"><span class="int-d"></span>HubSpot</div>
+          <div class="int-b"><span class="int-d"></span>Salesforce</div>
+          <div class="int-b"><span class="int-d"></span>GoHighLevel</div>
+          <div class="int-b"><span class="int-d"></span>Pipedrive</div>
+          <div class="int-b"><span class="int-d"></span>Zoho CRM</div>
+          <div class="int-b"><span class="int-d"></span>Calendly</div>
+          <div class="int-b"><span class="int-d"></span>Google Calendar</div>
+          <div class="int-b"><span class="int-d"></span>Outlook</div>
+          <div class="int-b"><span class="int-d"></span>Twilio</div>
+          <div class="int-b"><span class="int-d"></span>Slack</div>
+          <div class="int-b"><span class="int-d"></span>Zapier</div>
+          <div class="int-b"><span class="int-d"></span>Make</div>
+          <div class="int-b"><span class="int-d"></span>Airtable</div>
+          <div class="int-b"><span class="int-d"></span>Notion</div>
+          <div class="int-b"><span class="int-d"></span>Google Sheets</div>
+          <div class="int-b"><span class="int-d"></span>Stripe</div>
+          <div class="int-b">+ many more...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ §08 Pricing ══════════════════════════════════════════════ -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="pw">
+        <div class="pi">
+          <span class="eyebrow">Pricing</span>
+          <h2>Simple, transparent pricing.</h2>
+          <p>One subscription covers your full system: design, build, integration, and ongoing support. No retainer surprises.</p>
+          <div class="math-box">
+            <p><strong>The math is simple:</strong> If our 24/7 AI Receptionist captures just two additional jobs per month at a $2K average ticket, that's <strong>$48K/yr in new revenue</strong> — from a $399/month investment.</p>
+          </div>
+          <!-- 3 inline FAQs -->
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update themselves; and dashboards that give you full visibility. Every system integrates with your existing stack.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training, integration, and testing — you just approve the final product before we flip the switch.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "$0.6/min of calls" mean?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
+            </div>
+          </div>
+        </div>
+        <!-- Two pricing cards -->
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div class="pcard-grid">
+            <!-- Starter -->
+            <div class="pcard light">
+              <div class="p-plan" style="color:rgba(0,0,0,.45)">Starter</div>
+              <div style="font-size:clamp(13px,1vw,16px);color:rgba(0,0,0,.55);margin-bottom:20px;">24/7 AI Receptionist</div>
+              <!-- Setup fee -->
+              <div style="font-size:clamp(11px,.85vw,13px);color:rgba(0,0,0,.35);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Setup Fee</div>
+              <div style="font-size:clamp(18px,1.4vw,24px);font-weight:700;color:#1a1a1a;margin-bottom:16px;">$2,000 <span style="font-size:clamp(12px,.9vw,14px);font-weight:400;color:rgba(0,0,0,.4);">one-time</span></div>
+              <div class="p-ar" style="margin-bottom:4px;">
+                <span class="p-cur" style="color:#1a1a1a;">$</span>
+                <span class="p-amt" style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);">399</span>
+              </div>
+              <div style="font-size:clamp(13px,1vw,16px);color:rgba(0,0,0,.5);margin-bottom:4px;">per month</div>
+              <div style="font-size:clamp(12px,.9vw,14px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.60/min · Voice AI usage</div>
+              <ul class="p-list" style="border-top:1px solid rgba(0,0,0,.08);padding-top:20px;">
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Take inbound calls</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>New lead intake</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Lead qualification</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>AI Scheduling</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Answer caller questions</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Call transfers</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>CRM integration</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Call recording &amp; transcription</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Instant call summaries</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Continuous monitoring &amp; optimization</li>
+              </ul>
+              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn full" style="margin-top:28px;background:#1a1a1a;color:#fff;">Get Started</a>
+              <p class="p-fn" style="color:rgba(0,0,0,.4);text-align:center;margin-top:12px;">No lock-in · Cancel anytime</p>
+            </div>
+            <!-- Growth Engine -->
+            <div class="pcard" style="padding-top:clamp(44px,4.5vw,64px);">
+              <div class="badge">Most Popular</div>
+              <div class="p-plan">Growth Engine</div>
+              <div style="font-size:clamp(13px,1vw,16px);color:rgba(255,255,255,.45);margin-bottom:20px;">Your Business Automated — Powered by AI</div>
+              <!-- Setup fee -->
+              <div style="font-size:clamp(11px,.85vw,13px);color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Setup Fee</div>
+              <div style="font-size:clamp(18px,1.4vw,24px);font-weight:700;color:#fff;margin-bottom:16px;">$5,000 <span style="font-size:clamp(12px,.9vw,14px);font-weight:400;color:rgba(255,255,255,.35);">one-time</span></div>
+              <div class="p-ar" style="margin-bottom:4px;">
+                <span class="p-cur">$</span>
+                <span class="p-amt" style="font-size:clamp(52px,5vw,80px);">999</span>
+                <span class="p-per" style="padding-bottom:12px;">+/mo</span>
+              </div>
+              <div style="font-size:clamp(13px,1vw,16px);color:rgba(255,255,255,.45);margin-bottom:4px;">per month</div>
+              <div style="font-size:clamp(12px,.9vw,14px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.60/min · Voice AI usage</div>
+              <ul class="p-list" style="border-top:1px solid rgba(255,255,255,.1);padding-top:20px;">
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Everything in Starter</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom automations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Automated Reputation Management</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Speed-to-Lead outreach</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Database Reactivation Campaigns</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom Admin Task Automations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom integrations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Monthly reports</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Continuous monitoring &amp; optimization</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Priority support</li>
+              </ul>
+              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent full" style="margin-top:28px;">Get Started</a>
+              <p class="p-fn" style="color:rgba(255,255,255,.25);text-align:center;margin-top:12px;">No lock-in · Cancel anytime</p>
+            </div>
+          </div>
+          <!-- Enterprise banner -->
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:clamp(16px,1.5vw,24px) clamp(20px,2vw,32px);">
+            <p style="margin:0;font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.45);">
+              <strong style="color:rgba(255,255,255,.7);">Enterprise / custom scope available.</strong> Reach out to discuss project-based engagements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ §09 Testimonials ═════════════════════════════════════════ -->
+  <section class="bg-alt" id="results">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Client Results</span>
+        <h2>The businesses that stopped leaving revenue on the table.</h2>
+      </div>
+      <div class="tg">
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p class="tq">"We were losing 30–40% of after-hours calls to competitors. Three weeks after going live, our
+            booking rate jumped 67%. The AI handles it better than our old answering service ever did."</p>
+          <div class="tau">
+            <div class="tav">M</div>
+            <div>
+              <div class="tn">Marcus D.</div>
+              <div class="tr">Owner, ProFlow HVAC</div>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p class="tq">"The follow-up automation alone paid for the first 6 months. We're converting leads we would
+            have completely lost before. Our sales team now only talks to pre-qualified, ready-to-buy prospects."</p>
+          <div class="tau">
+            <div class="tav">L</div>
+            <div>
+              <div class="tn">Leila R.</div>
+              <div class="tr">Director, RapidRestore</div>
+            </div>
+          </div>
+        </div>
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p class="tq">"I used to spend 3 hours a day on the phone. Now I look at a dashboard. The agent books jobs,
+            confirms them, and sends reminders. My no-show rate dropped from 22% to 4%."</p>
+          <div class="tau">
+            <div class="tav">J</div>
+            <div>
+              <div class="tn">James T.</div>
+              <div class="tr">Principal, TerraForm Landscaping</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ §10 FAQ ═══════════════════════════════════════════════════ -->
+  <section class="bg-alt" id="faq">
+    <div class="wrap">
+      <div class="faq-grid">
+        <div class="faq-l">
+          <span class="eyebrow">Questions</span>
+          <h2>Before you reach out.</h2>
+          <p>Most people have the same questions. Here are the honest answers.</p>
+          <a href="mailto:hello@successforce.agency" class="btn outline mt32">Still have questions?</a>
+        </div>
+        <div class="faq-list">
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update themselves; and dashboards that give you full visibility. Every system integrates with your existing stack.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training, integration, and testing — you just approve the final product before we flip the switch.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "$0.6/min of calls" mean?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">Do I need to replace my current tools?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">No. Our systems are built to integrate with what you already use — CRM, calendar, email, SMS platforms. We connect to your tools; you don't need to replace them.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What industries do you work with?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">We work with service businesses generating $500K+ in annual revenue where the phone is a primary revenue channel — HVAC, restoration, legal, healthcare, real estate, landscaping, auto, and more. If your business lives and dies by the phone, we're built for you.</div>
+            </div>
+          </div>
+          <div class="fi">
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What happens after I reach out?</span><span class="ft">+</span></div>
+            <div class="fa">
+              <div class="fai">We'll schedule a 30-minute discovery call to map out exactly where your business is leaking revenue and show you what an automated system would look like — no pitch, no pressure. If it makes sense, we move forward with a custom build.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ §11 Final CTA ════════════════════════════════════════════ -->
+  <section class="cta-sec" id="book">
+    <div class="wrap" style="max-width:clamp(900px, 65vw, 1800px)">
+      <span class="eyebrow" style="color:rgba(255,255,255,.36);text-align:center;display:block">Get Started</span>
+      <h2>Stop losing revenue to manual processes.</h2>
+      <p class="sub">Book a free 30-minute strategy call. We'll map out exactly where your business is leaking revenue
+        and show you what an automated system would look like — no pitch, no pressure.</p>
+      <div
+        style="margin-top:clamp(40px, 5vw, 64px); display:flex; flex-direction:column; align-items:center; gap:20px;">
+        <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent lg"
+          style="padding:clamp(16px, 1.8vw, 36px) clamp(40px, 4vw, 80px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600; box-shadow:0 12px 32px rgba(255,94,58,.25);">
+          Claim Your Free Revenue Automation Audit
+          <svg viewBox="0 0 24 24" style="width:1.2em; height:1.2em; margin-left:4px;">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <p class="cn" style="margin-top:20px">No commitment required · Results-first conversation</p>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ════════════════════════════════════════════════════ -->
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="fg">
+        <div style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div class="fl"><span class="ndot"></span>SuccessForce LLC</div>
+            <p class="ft2">An Operational Transformation Agency building custom AI-powered systems to scale revenue,
+              increase efficiency, and maintain founder sanity.</p>
+          </div>
+          <div style="margin-top:clamp(40px, 5vw, 80px);">
+            <span class="fcp" style="font-size:clamp(11px, 0.8vw, 16px);">&copy; 2026 SuccessForce. All rights
+              reserved.</span>
+          </div>
+        </div>
+        <div>
+          <div class="fh">Our Systems</div>
+          <ul class="ful">
+            <li><a href="#solutions">Revenue Scaling</a></li>
+            <li><a href="#how-it-works">Voice AI Agents</a></li>
+            <li><a href="#how-it-works">Workflow Automation</a></li>
+            <li><a href="#how-it-works">Custom Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fh">The Agency</div>
+          <ul class="ful">
+            <li><a href="#our-process">Our Process</a></li>
+            <li><a href="#results">Client Results</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer">Claim Your Free
+                Audit</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fh">Reach Out</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div>
+              <div
+                style="font-size:clamp(11px, 0.8vw, 20px); text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,.30); margin-bottom:4px;">
+                Based in</div>
+              <div style="font-size:clamp(15px, 1.1vw, 24px); color:rgba(255,255,255,.70);">MIAMI, FL</div>
+            </div>
+            <div>
+              <div
+                style="font-size:clamp(11px, 0.8vw, 20px); text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,.30); margin-bottom:4px;">
+                Phone</div>
+              <a href="tel:+19415004007"
+                style="font-size:clamp(15px, 1.1vw, 24px); color:rgba(255,255,255,.70); text-decoration:none; display:inline-block; transition:color 0.2s;"
+                onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.70)'">+1 (941)
+                500-4007</a>
+            </div>
+            <div>
+              <div
+                style="font-size:clamp(11px, 0.8vw, 20px); text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,.30); margin-bottom:4px;">
+                Email</div>
+              <a href="mailto:hello@successforce.agency"
+                style="font-size:clamp(15px, 1.1vw, 24px); color:rgba(255,255,255,.70); text-decoration:none; display:inline-block; transition:color 0.2s;"
+                onmouseover="this.style.color='#fff'"
+                onmouseout="this.style.color='rgba(255,255,255,.70)'">hello@successforce.agency</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        let targetPosition = 0;
+
+        if (targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if (!targetElement) return;
+          const headerOffset = 90;
+          targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerOffset;
+        }
+
+        e.preventDefault();
+        const startPosition = window.scrollY;
+        const distance = targetPosition - startPosition;
+        let start = null;
+
+        function easeInOutCubic(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t * t + b;
+          t -= 2;
+          return c / 2 * (t * t * t + 2) + b;
+        }
+
+        function animationLoop(timestamp) {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, 800));
+          if (progress < 800) window.requestAnimationFrame(animationLoop);
+          else window.scrollTo(0, targetPosition);
+        }
+
+        window.requestAnimationFrame(animationLoop);
+      });
+    });
+  </script>
+</body>
+
+</html>
