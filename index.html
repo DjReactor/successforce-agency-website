@@ -137,6 +137,8 @@
       user-select: none;
       mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      flex-wrap: nowrap; /* Force single line */
+      width: 100%;
     }
 
     .int-track {
@@ -1100,9 +1102,7 @@
     .int-row {
       display: flex;
       align-items: center;
-      gap: clamp(10px, 1vw, 24px);
-      flex-wrap: wrap;
-      justify-content: center;
+      gap: 24px;
       margin-top: clamp(40px, 4vw, 80px);
     }
 
