@@ -130,33 +130,56 @@
       color: rgba(255, 255, 255, 0.4);
     }
 
+    .bg-dark .int-row {
+      margin-top: 0;
+      overflow: hidden;
+      display: flex;
+      user-select: none;
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .int-track {
+      display: flex;
+      flex-shrink: 0;
+      gap: 24px;
+      padding: 20px 0;
+      animation: marquee 40s linear infinite;
+    }
+
+    .int-row:hover .int-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-100% - 24px)); }
+    }
+
     .bg-dark .int-b {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: clamp(56px, 6vw, 84px);
-      height: clamp(56px, 6vw, 84px);
-      padding: 0;
+      width: clamp(80px, 8vw, 120px);
+      height: clamp(80px, 8vw, 120px);
+      flex-shrink: 0;
       background: var(--dark-2);
-      border-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 16px;
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 600;
-      font-size: clamp(14px, 1.2vw, 22px);
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     
     .bg-dark .int-b:hover {
       transform: translateY(-4px);
       border-color: rgba(255, 255, 255, 0.15);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      color: white;
     }
 
     .bg-dark .int-b img {
-      width: clamp(24px, 2.5vw, 40px);
-      height: clamp(24px, 2.5vw, 40px);
+      width: 50%;
+      height: 50%;
       object-fit: contain;
+      filter: brightness(0) invert(1);
       opacity: 0.8;
       transition: opacity 0.2s;
     }
@@ -2431,24 +2454,8 @@
     <div class="wrap">
       <div style="text-align:center">
         <span class="eyebrow" style="display:inline-block;margin-bottom:clamp(44px, 4vw, 88px);">Integrates with tools you already use</span>
-        <div class="int-row" style="margin-top:0;">
-          <div class="int-b" title="HubSpot"><img src="https://cdn.simpleicons.org/hubspot/white" alt="HubSpot"></div>
-          <div class="int-b" title="Salesforce"><img src="https://cdn.simpleicons.org/salesforce/white" alt="Salesforce"></div>
-          <div class="int-b" title="ActiveCampaign"><img src="https://cdn.simpleicons.org/activecampaign/white" alt="ActiveCampaign"></div>
-          <div class="int-b" title="Pipedrive"><img src="https://cdn.simpleicons.org/pipedrive/white" alt="Pipedrive"></div>
-          <div class="int-b" title="Zoho CRM"><img src="https://cdn.simpleicons.org/zoho/white" alt="Zoho"></div>
-          <div class="int-b" title="Calendly"><img src="https://cdn.simpleicons.org/calendly/white" alt="Calendly"></div>
-          <div class="int-b" title="Google Calendar"><img src="https://cdn.simpleicons.org/googlecalendar/white" alt="Google Calendar"></div>
-          <div class="int-b" title="Microsoft Teams"><img src="https://cdn.simpleicons.org/microsoftteams/white" alt="Microsoft Teams"></div>
-          <div class="int-b" title="Twilio"><img src="https://cdn.simpleicons.org/twilio/white" alt="Twilio"></div>
-          <div class="int-b" title="Slack"><img src="https://cdn.simpleicons.org/slack/white" alt="Slack"></div>
-          <div class="int-b" title="Zapier"><img src="https://cdn.simpleicons.org/zapier/white" alt="Zapier"></div>
-          <div class="int-b" title="Make"><img src="https://cdn.simpleicons.org/make/white" alt="Make"></div>
-          <div class="int-b" title="Airtable"><img src="https://cdn.simpleicons.org/airtable/white" alt="Airtable"></div>
-          <div class="int-b" title="Notion"><img src="https://cdn.simpleicons.org/notion/white" alt="Notion"></div>
-          <div class="int-b" title="Google Sheets"><img src="https://cdn.simpleicons.org/googlesheets/white" alt="Google Sheets"></div>
-          <div class="int-b" title="Stripe"><img src="https://cdn.simpleicons.org/stripe/white" alt="Stripe"></div>
-          <div class="int-b" title="And many more...+">+50</div>
+        <div class="int-row" id="logo-carousel-container">
+          <!-- Dynamic Logos Inserted Here -->
         </div>
       </div>
     </div>
@@ -2927,6 +2934,39 @@
       });
     });
   </script>
+
+  <!-- Logo Carousel Loader -->
+  <script>
+    const logos = [
+      'ActiveCampaign_Symbol_0.svg', 'Airtable_idbbncOsuL_0.svg', 'Cal-com_idQDvBAWQz_0.svg',
+      'Calendly_idoHNAJiuQ_0.svg', 'Gmail_idrA5FDGTH_0.svg', 'Google_Sheets_Logo.svg',
+      'HubSpot_Symbol_0.svg', 'Make_idvSugHHA2_0.svg', 'Notion_Logo_0.svg',
+      'Salesforce_idN3OdcTG__0.svg', 'Slack_Symbol_0.svg', 'Stripe_Logo_0.svg',
+      'WhatsApp_Logo_Alternative_0.svg', 'Zoho_id0C7_joRD_0.svg', 'google_calendar_new_logo_icon_159141.svg',
+      'hubspot_logo_icon_170009.svg', 'twilio_logo_icon_168416.svg', 'zapier_logo_icon_169680.svg'
+    ];
+
+      const container = document.getElementById('logo-carousel-container');
+      
+      function createTrack() {
+        const track = document.createElement('div');
+        track.className = 'int-track';
+        logos.forEach(logo => {
+          const item = document.createElement('div');
+          item.className = 'int-b';
+          const img = document.createElement('img');
+          img.src = `Logos/${logo}`;
+          img.alt = logo.split('_')[0];
+          item.appendChild(img);
+          track.appendChild(item);
+        });
+        return track;
+      }
+
+      // Add two tracks for seamless looping
+      container.appendChild(createTrack());
+      container.appendChild(createTrack());
+    </script>
 </body>
 
 </html>
