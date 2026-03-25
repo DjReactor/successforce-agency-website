@@ -160,27 +160,26 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: clamp(80px, 8vw, 120px);
+      width: clamp(100px, 10vw, 160px);
       height: clamp(80px, 8vw, 120px);
       flex-shrink: 0;
-      background: var(--dark-2);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      transition: transform 0.2s ease;
     }
     
     .bg-dark .int-b:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: scale(1.1);
+      box-shadow: none;
     }
 
     .bg-dark .int-b img {
-      width: 50%;
-      height: 50%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.8;
+      filter: none;
+      opacity: 0.85;
       transition: opacity 0.2s;
     }
 
@@ -2963,7 +2962,8 @@
         return track;
       }
 
-      // Add two tracks for seamless looping
+      // Clear container and add two tracks for seamless looping
+      container.innerHTML = '';
       container.appendChild(createTrack());
       container.appendChild(createTrack());
     </script>
