@@ -127,7 +127,7 @@
     }
 
     .bg-dark .eyebrow {
-      color: rgba(255, 255, 255, 0.6);
+      color: #FFFFFF;
       font-size: clamp(13px, 1.1vw, 24px);
     }
 
@@ -138,7 +138,8 @@
       user-select: none;
       mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-      flex-wrap: nowrap; /* Force single line */
+      flex-wrap: nowrap;
+      /* Force single line */
       width: 100%;
     }
 
@@ -146,7 +147,7 @@
       display: flex;
       flex-shrink: 0;
       gap: 24px;
-      padding: 20px 0;
+      padding: 0;
       animation: marquee 40s linear infinite;
     }
 
@@ -155,8 +156,13 @@
     }
 
     @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(calc(-100% - 24px)); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-100% - 24px));
+      }
     }
 
     .bg-dark .int-b {
@@ -171,7 +177,7 @@
       border-radius: 0;
       transition: transform 0.2s ease;
     }
-    
+
     .bg-dark .int-b:hover {
       transform: scale(1.1);
       box-shadow: none;
@@ -417,16 +423,32 @@
     }
 
     .nav.on {
-      background: rgba(36, 38, 43, .97);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, .06);
+      background: rgba(255, 255, 255, .80);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav.on .nav-in {
+      padding: clamp(20px, 2.2vw, 32px) 0;
+    }
+
+    .nav.on .logo,
+    .nav.on .nav-ul a,
+    .nav.on .hbg {
+      color: var(--dark);
+    }
+
+    .nav.on .nav-ul a:hover {
+      color: var(--accent);
     }
 
     .nav-in {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: clamp(24px, 2.5vw, 42px) 0;
+      padding: clamp(32px, 3.5vw, 64px) 0;
       transition: padding .25s;
     }
 
@@ -566,27 +588,34 @@
       background: rgba(255, 255, 255, .07);
     }
 
-    .badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .14);
+      justify-content: center;
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 100px;
-      padding: 6px 12px 6px 8px;
-      margin-bottom: 28px;
+      padding: clamp(6px, 0.6vw, 10px);
+      margin-bottom: clamp(24px, 2.5vw, 40px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .badge-pill {
-      background: var(--accent);
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .1);
       color: #fff;
       font-family: var(--mono);
-      font-size: clamp(10px, 0.8vw, 18px);
-      font-weight: 500;
-      letter-spacing: .08em;
+      font-size: clamp(14px, 1.2vw, 20px);
+      font-weight: 600;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      padding: clamp(3px, 0.3vw, 8px) clamp(8px, 0.8vw, 16px);
+      padding: clamp(10px, 1vw, 16px) clamp(24px, 2vw, 40px);
+      line-height: 1;
       border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .badge-text {
@@ -1154,7 +1183,7 @@
     .pcard.light {
       background: #ffffff;
       color: #1a1a1a;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--dark);
     }
 
     .pcard.light .p-hl,
@@ -1202,7 +1231,7 @@
       background: rgba(0, 0, 0, .08);
     }
 
-    .badge {
+    .pcard .badge {
       position: absolute;
       top: 0;
       left: 50%;
@@ -1212,22 +1241,13 @@
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .08em;
-      padding: 6px 16px;
-      border-radius: 20px;
+      letter-spacing: .12em;
+      padding: 8px 20px;
+      line-height: 1;
+      border-radius: 100px;
     }
 
-    .hero-badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      padding: 6px 16px;
-      border-radius: 20px;
-    }
+
 
     @media(max-width:860px) {
       .pcard-grid {
@@ -1866,7 +1886,7 @@
   <!-- ═══ §01 Hero ═════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="wrap">
-      <div style="display:flex;justify-content:center;margin-bottom:16px" class="h-a1">
+      <div style="display:flex;justify-content:center" class="h-a1">
         <div class="hero-badge">
           <span class="badge-pill">Revenue Automation Agency</span>
         </div>
@@ -2450,10 +2470,12 @@
   </section>
 
   <!-- ═══ Integrations ═════════════════════════════════════════════ -->
-  <section id="integrations" class="bg-dark" style="padding: clamp(48px, 6vw, 128px) 0;">
-    <div class="wrap">
-      <div style="text-align:center">
-        <span class="eyebrow" style="display:inline-block;margin-bottom:clamp(36px, 3vw, 72px);">Integrates with tools you already use</span>
+  <section id="integrations" class="bg-dark" style="padding: clamp(45px, 5vw, 90px) 0; overflow: hidden;">
+    <div class="wrap" style="width:100vw; max-width:100%; box-sizing:border-box;">
+      <div class="sh" style="text-align:center">
+        <span class="eyebrow"
+          style="display:inline-block;margin-bottom:clamp(30px, 3.5vw, 64px); margin-top:0;">Seamless integration with
+          tools you already use</span>
         <div class="int-row" id="logo-carousel-container">
           <!-- Dynamic Logos Inserted Here -->
         </div>
@@ -2560,15 +2582,18 @@
               <div
                 style="font-size:clamp(13px,1vw,15px);color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;visibility:hidden;">
                 Setup Fee</div>
-              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#10b981;margin-bottom:16px;">$0 Setup Fee
+              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#10b981;margin-bottom:16px;">$0 Setup
+                Fee
               </div>
               <div class="p-ar" style="margin-bottom:4px; align-items:baseline;">
-                <span class="p-cur" style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);padding-bottom:0;margin-right:2px;">$</span>
+                <span class="p-cur"
+                  style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);padding-bottom:0;margin-right:2px;">$</span>
                 <span class="p-amt" style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);">397</span>
                 <span style="font-size:clamp(31px,3vw,48px);color:#1a1a1a;font-weight:300;margin-left:2px;">/mo</span>
               </div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+
-                $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.05 / SMS sent</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.05 / Workflow run</div>
               <ul class="p-list" style="border-top:1px solid rgba(0,0,0,.08);padding-top:20px;">
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
@@ -2601,6 +2626,16 @@
                       <path d="M20 6L9 17l-5-5" />
                     </svg></span>Continuous monitoring &amp; optimization</li>
               </ul>
+
+              <h6 style="font-size:clamp(13px, 0.9vw, 20px); font-weight:700; color:#4b5563; margin-top:clamp(24px, 2.5vw, 48px); margin-bottom:12px; text-transform:none; letter-spacing:0;">Add-ons (Optional):</h6>
+
+              <div style="background:#fff; border-radius:12px; border:1px solid #eff6ff; overflow:hidden;">
+                <!-- Row 1 -->
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:clamp(12px, 1.2vw, 24px) clamp(16px, 1.5vw, 32px); background:#eff6ff;">
+                  <span style="font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:#374151; line-height:1.4;">Reviews Engine</span>
+                  <span style="font-size:clamp(14px, 1.1vw, 26px); font-weight:700; color:#111827; white-space:nowrap; margin-left:clamp(12px, 1.2vw, 24px);">+$100/mo</span>
+                </div>
+              </div>
               <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
                 class="btn accent lg"
                 style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; white-space:normal; line-height:1.3; margin-top:28px; padding:clamp(16px, 1.8vw, 36px) clamp(20px, 4vw, 40px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600;">
@@ -2631,8 +2666,9 @@
                 <span class="p-amt" style="font-size:clamp(52px,5vw,80px);">997</span>
                 <span style="font-size:clamp(31px,3vw,48px);color:#fff;font-weight:300;margin-left:2px;">/mo</span>
               </div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+
-                $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.05 / SMS sent</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.05 / Workflow run</div>
               <ul class="p-list" style="border-top:1px solid rgba(255,255,255,.1);padding-top:20px;">
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
@@ -2642,7 +2678,7 @@
                     </svg></span>Custom automations</li>
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
-                    </svg></span>Automated Reputation Management</li>
+                    </svg></span>Reviews Engine</li>
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
                     </svg></span>Speed-to-Lead outreach</li>
@@ -2678,14 +2714,7 @@
                 anytime</p>
             </div>
           </div>
-          <!-- Enterprise banner -->
-          <div
-            style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:clamp(16px,1.5vw,24px) clamp(20px,2vw,32px);">
-            <p style="margin:0;font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.45);">
-              <strong style="color:rgba(255,255,255,.7);">Enterprise / custom scope available.</strong> Reach out to
-              discuss project-based engagements.
-            </p>
-          </div>
+
         </div>
       </div>
     </div>
@@ -2835,7 +2864,7 @@
       <div class="fg">
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <div class="fl"><span class="ndot"></span>SuccessForce LLC</div>
+            <div class="fl"><span class="ndot"></span>SuccessForce</div>
             <p class="ft2">An Operational Transformation Agency building custom AI-powered systems to scale revenue,
               increase efficiency, and maintain founder sanity.</p>
           </div>
@@ -2898,6 +2927,16 @@
     </div>
   </footer>
   <script>
+    // Header Scroll Logic
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('on');
+      } else {
+        nav.classList.remove('on');
+      }
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -2946,28 +2985,28 @@
       'hubspot_logo_icon_170009.svg', 'twilio_logo_icon_168416.svg', 'zapier_logo_icon_169680.svg'
     ];
 
-      const container = document.getElementById('logo-carousel-container');
-      
-      function createTrack() {
-        const track = document.createElement('div');
-        track.className = 'int-track';
-        logos.forEach(logo => {
-          const item = document.createElement('div');
-          item.className = 'int-b';
-          const img = document.createElement('img');
-          img.src = `Logos/${logo}`;
-          img.alt = logo.split('_')[0];
-          item.appendChild(img);
-          track.appendChild(item);
-        });
-        return track;
-      }
+    const container = document.getElementById('logo-carousel-container');
 
-      // Clear container and add two tracks for seamless looping
-      container.innerHTML = '';
-      container.appendChild(createTrack());
-      container.appendChild(createTrack());
-    </script>
+    function createTrack() {
+      const track = document.createElement('div');
+      track.className = 'int-track';
+      logos.forEach(logo => {
+        const item = document.createElement('div');
+        item.className = 'int-b';
+        const img = document.createElement('img');
+        img.src = `Logos/${logo}`;
+        img.alt = logo.split('_')[0];
+        item.appendChild(img);
+        track.appendChild(item);
+      });
+      return track;
+    }
+
+    // Clear container and add two tracks for seamless looping
+    container.innerHTML = '';
+    container.appendChild(createTrack());
+    container.appendChild(createTrack());
+  </script>
 </body>
 
 </html>
