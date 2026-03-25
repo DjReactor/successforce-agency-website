@@ -1067,39 +1067,74 @@
       border-radius: 12px;
       padding: clamp(24px, 2.5vw, 40px);
       margin-top: 32px;
-      border: 1px solid rgba(255,255,255,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       margin-bottom: 40px;
     }
+
     .math-box p {
       font-size: clamp(14px, 1.1vw, 18px);
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 0;
       line-height: 1.6;
     }
+
     .pcard-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
+
     .pcard.light {
       background: #ffffff;
       color: #1a1a1a;
-      border: 1px solid rgba(0,0,0,0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
+
     .pcard.light .p-hl,
     .pcard.light .p-plan,
     .pcard.light .p-cur,
-    .pcard.light .p-amt { color: #1a1a1a; }
-    .pcard.light .p-plan { color: rgba(0,0,0,0.6); }
-    .pcard.light .p-cur, .pcard.light .p-per { color: rgba(0,0,0,0.5); }
-    .pcard.light .p-ns { color: rgba(0,0,0,0.6); }
-    .pcard.light .p-inc { color: #1a1a1a; border-top-color: rgba(0,0,0,0.1); }
-    .pcard.light .p-div { border-top-color: rgba(0,0,0,0.1); }
-    .pcard.light .cc svg { stroke: #1a1a1a; }
-    .pcard.light .ck svg { stroke: #1a1a1a; }
-    .pcard.light .p-list li { color: #1a1a1a; }
-    .pcard.light .ck { background: rgba(0, 0, 0, .08); }
-    
+    .pcard.light .p-amt {
+      color: #1a1a1a;
+    }
+
+    .pcard.light .p-plan {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .pcard.light .p-cur,
+    .pcard.light .p-per {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .pcard.light .p-ns {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .pcard.light .p-inc {
+      color: #1a1a1a;
+      border-top-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .pcard.light .p-div {
+      border-top-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .pcard.light .cc svg {
+      stroke: #1a1a1a;
+    }
+
+    .pcard.light .ck svg {
+      stroke: #1a1a1a;
+    }
+
+    .pcard.light .p-list li {
+      color: #1a1a1a;
+    }
+
+    .pcard.light .ck {
+      background: rgba(0, 0, 0, .08);
+    }
+
     .badge {
       position: absolute;
       top: 0;
@@ -1116,7 +1151,9 @@
     }
 
     @media(max-width:860px) {
-      .pcard-grid { grid-template-columns: 1fr; }
+      .pcard-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .pw {
@@ -2405,27 +2442,39 @@
         <div class="pi">
           <span class="eyebrow">Pricing</span>
           <h2>Simple, transparent pricing.</h2>
-          <p>Start with a 24/7 AI Receptionist, or automate your entire operation. Either way, we build it, run it, and optimize it for you — no extra headcount, no setup headaches.</p>
+          <p>Start with a 24/7 AI Receptionist, or automate your entire operation. Either way, we build it, run it, and
+            optimize it for you — no extra headcount, no setup headaches.</p>
           <div class="math-box">
-            <p><strong>The math is simple:</strong> If our 24/7 AI Receptionist captures just one additional job per month at a $2K average ticket, that's <strong>$24K/yr in new revenue</strong> — from a $397/month investment.</p>
+            <p><strong>The math is simple:</strong> If our 24/7 AI Receptionist captures just one additional job per
+              month at a $2K average ticket, that's <strong>$24K/yr in new revenue</strong> — from a $397/month
+              investment.</p>
           </div>
           <!-- 3 inline FAQs -->
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update themselves; and dashboards that give you full visibility. Every system integrates with your existing stack.</div>
+              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and
+                book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update
+                themselves; and dashboards that give you full visibility. Every system integrates with your existing
+                stack.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training, integration, and testing — you just approve the final product before we flip the switch.</div>
+              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training,
+                integration, and testing — you just approve the final product before we flip the switch.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "+ $0.60/min · Voice AI usage" mean?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "+ $0.60/min · Voice AI usage"
+                mean?</span><span class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
+              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per
+                call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from
+                even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
             </div>
           </div>
         </div>
@@ -2436,74 +2485,139 @@
             <div class="pcard light" style="padding-top:clamp(44px,4.5vw,64px);">
               <div class="badge">Most Popular</div>
               <div class="p-plan" style="color:rgba(0,0,0,.45)">Starter</div>
-              <div style="font-size:clamp(16px,1.3vw,22px);color:rgba(0,0,0,.6);margin-bottom:20px;font-weight:500;">24/7 AI Receptionist</div>
+              <div style="font-size:clamp(16px,1.3vw,22px);color:rgba(0,0,0,.6);margin-bottom:20px;font-weight:500;">
+                24/7 AI Receptionist</div>
               <!-- Setup fee -->
-              <div style="font-size:clamp(13px,1vw,15px);color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Setup Fee</div>
-              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#1a1a1a;margin-bottom:16px;">$2,000 <span style="font-size:clamp(14px,1.1vw,18px);font-weight:400;color:rgba(0,0,0,.4);">one-time</span></div>
+              <div
+                style="font-size:clamp(13px,1vw,15px);color:rgba(0,0,0,.4);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">
+                Setup Fee</div>
+              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#1a1a1a;margin-bottom:16px;">$2,000
+                <span style="font-size:clamp(14px,1.1vw,18px);font-weight:400;color:rgba(0,0,0,.4);">one-time</span>
+              </div>
               <div class="p-ar" style="margin-bottom:4px;">
                 <span class="p-cur" style="color:#1a1a1a;">$</span>
                 <span class="p-amt" style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);">397</span>
               </div>
               <div style="font-size:clamp(15px,1.2vw,20px);color:rgba(0,0,0,.5);margin-bottom:6px;">per month</div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+
+                $0.60/min · Voice AI usage</div>
               <ul class="p-list" style="border-top:1px solid rgba(0,0,0,.08);padding-top:20px;">
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Take inbound calls</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>New lead intake</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Lead qualification</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>AI Scheduling</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Answer caller questions</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Call transfers</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Basic CRM integration</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Call recording &amp; transcription</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Instant call summaries</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Continuous monitoring &amp; optimization</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Take inbound calls</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>New lead intake</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Lead qualification</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>AI Scheduling</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Answer caller questions</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Call transfers</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Basic CRM integration</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Call recording &amp; transcription</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Instant call summaries</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Continuous monitoring &amp; optimization</li>
               </ul>
-              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent lg" style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; white-space:normal; line-height:1.3; margin-top:28px; padding:clamp(16px, 1.8vw, 36px) clamp(20px, 4vw, 40px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600;">
+              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
+                class="btn accent lg"
+                style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; white-space:normal; line-height:1.3; margin-top:28px; padding:clamp(16px, 1.8vw, 36px) clamp(20px, 4vw, 40px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600;">
                 Get Started
                 <svg viewBox="0 0 24 24" style="width:1.2em; height:1.2em; margin-left:4px; flex-shrink:0;">
-                  <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <p class="p-fn" style="color:rgba(0,0,0,.4);text-align:center;margin-top:12px;">No lock-in · Cancel anytime</p>
+              <p class="p-fn" style="color:rgba(0,0,0,.4);text-align:center;margin-top:12px;">No lock-in · Cancel
+                anytime</p>
             </div>
             <!-- Growth Engine -->
             <div class="pcard" style="padding-top:clamp(44px,4.5vw,64px);">
               <div class="p-plan">Growth Engine</div>
-              <div style="font-size:clamp(16px,1.3vw,22px);color:rgba(255,255,255,.55);margin-bottom:20px;font-weight:500;">Your Business Automated — Powered by AI</div>
+              <div
+                style="font-size:clamp(16px,1.3vw,22px);color:rgba(255,255,255,.55);margin-bottom:20px;font-weight:500;">
+                Your Business Automated — Powered by AI</div>
               <!-- Setup fee -->
-              <div style="font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Setup Fee</div>
-              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#fff;margin-bottom:16px;">$5,000 <span style="font-size:clamp(14px,1.1vw,18px);font-weight:400;color:rgba(255,255,255,.35);">one-time</span></div>
+              <div
+                style="font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">
+                Setup Fee</div>
+              <div style="font-size:clamp(22px,1.8vw,30px);font-weight:700;color:#fff;margin-bottom:16px;">$5,000 <span
+                  style="font-size:clamp(14px,1.1vw,18px);font-weight:400;color:rgba(255,255,255,.35);">one-time</span>
+              </div>
               <div class="p-ar" style="margin-bottom:4px;">
                 <span class="p-cur">$</span>
                 <span class="p-amt" style="font-size:clamp(52px,5vw,80px);">997</span>
               </div>
-              <div style="font-size:clamp(15px,1.2vw,20px);color:rgba(255,255,255,.45);margin-bottom:6px;">per month</div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+ $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(15px,1.2vw,20px);color:rgba(255,255,255,.45);margin-bottom:6px;">per month
+              </div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:28px;">+
+                $0.60/min · Voice AI usage</div>
               <ul class="p-list" style="border-top:1px solid rgba(255,255,255,.1);padding-top:20px;">
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Everything in Starter</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom automations</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Automated Reputation Management</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Speed-to-Lead outreach</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Database Reactivation Campaigns</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom Admin Task Automations</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Custom integrations</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Monthly reports</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Continuous monitoring &amp; optimization</li>
-                <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span>Priority support</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Everything in Starter</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Custom automations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Automated Reputation Management</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Speed-to-Lead outreach</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Database Reactivation Campaigns</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Custom Admin Task Automations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Custom integrations</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Monthly reports</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Continuous monitoring &amp; optimization</li>
+                <li><span class="ck"><svg viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span>Priority support</li>
               </ul>
-              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent lg" style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; white-space:normal; line-height:1.3; margin-top:28px; padding:clamp(16px, 1.8vw, 36px) clamp(20px, 4vw, 40px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600;">
+              <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
+                class="btn accent lg"
+                style="width:100%; box-sizing:border-box; justify-content:center; text-align:center; white-space:normal; line-height:1.3; margin-top:28px; padding:clamp(16px, 1.8vw, 36px) clamp(20px, 4vw, 40px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600;">
                 Get Started
                 <svg viewBox="0 0 24 24" style="width:1.2em; height:1.2em; margin-left:4px; flex-shrink:0;">
-                  <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <p class="p-fn" style="color:rgba(255,255,255,.25);text-align:center;margin-top:12px;">No lock-in · Cancel anytime</p>
+              <p class="p-fn" style="color:rgba(255,255,255,.25);text-align:center;margin-top:12px;">No lock-in · Cancel
+                anytime</p>
             </div>
           </div>
           <!-- Enterprise banner -->
-          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:clamp(16px,1.5vw,24px) clamp(20px,2vw,32px);">
+          <div
+            style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:clamp(16px,1.5vw,24px) clamp(20px,2vw,32px);">
             <p style="margin:0;font-size:clamp(13px,1vw,15px);color:rgba(255,255,255,.45);">
-              <strong style="color:rgba(255,255,255,.7);">Enterprise / custom scope available.</strong> Reach out to discuss project-based engagements.</p>
+              <strong style="color:rgba(255,255,255,.7);">Enterprise / custom scope available.</strong> Reach out to
+              discuss project-based engagements.
+            </p>
           </div>
         </div>
       </div>
@@ -2570,39 +2684,56 @@
         </div>
         <div class="faq-list">
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update themselves; and dashboards that give you full visibility. Every system integrates with your existing stack.</div>
+              <div class="fai">We design and deploy custom AI-powered systems — voice agents that answer, qualify, and
+                book 24/7; automation workflows that eliminate repetitive ops work; CRM pipelines that update
+                themselves; and dashboards that give you full visibility. Every system integrates with your existing
+                stack.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">How long does implementation take?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training, integration, and testing — you just approve the final product before we flip the switch.</div>
+              <div class="fai">Most clients are fully operational within 2–4 weeks. We handle all the setup, training,
+                integration, and testing — you just approve the final product before we flip the switch.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "+ $0.60/min · Voice AI usage" mean?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What does "+ $0.60/min · Voice AI usage"
+                mean?</span><span class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
+              <div class="fai">A typical qualification call lasts 2–4 minutes. At $0.60/min, that's $1.20–$2.40 per
+                call. For most businesses handling 200–500 calls/month, the total usage cost is $240–$600. The ROI from
+                even a single converted lead — typically worth $1,000–$10,000+ — makes this negligible.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">Do I need to replace my current tools?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">Do I need to replace my current tools?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">No. Our systems are built to integrate with what you already use — CRM, calendar, email, SMS platforms. We connect to your tools; you don't need to replace them.</div>
+              <div class="fai">No. Our systems are built to integrate with what you already use — CRM, calendar, email,
+                SMS platforms. We connect to your tools; you don't need to replace them.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What industries do you work with?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What industries do you work with?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">We work with service businesses generating $500K+ in annual revenue where the phone is a primary revenue channel — HVAC, restoration, legal, healthcare, real estate, landscaping, auto, and more. If your business lives and dies by the phone, we're built for you.</div>
+              <div class="fai">We work with service businesses generating $500K+ in annual revenue where the phone is a
+                primary revenue channel — HVAC, restoration, legal, healthcare, real estate, landscaping, auto, and
+                more. If your business lives and dies by the phone, we're built for you.</div>
             </div>
           </div>
           <div class="fi">
-            <div class="fq" onclick="tFaq(this)"><span class="fqt">What happens after I reach out?</span><span class="ft">+</span></div>
+            <div class="fq" onclick="tFaq(this)"><span class="fqt">What happens after I reach out?</span><span
+                class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">We'll schedule a 30-minute discovery call to map out exactly where your business is leaking revenue and show you what an automated system would look like — no pitch, no pressure. If it makes sense, we move forward with a custom build.</div>
+              <div class="fai">We'll schedule a 30-minute discovery call to map out exactly where your business is
+                leaking revenue and show you what an automated system would look like — no pitch, no pressure. If it
+                makes sense, we move forward with a custom build.</div>
             </div>
           </div>
         </div>
