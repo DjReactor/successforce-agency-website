@@ -121,17 +121,17 @@
       background: var(--bg-alt);
     }
 
-    section.bg-dark {
-      background: var(--dark);
-      color: var(--white);
+    section.bg-integrations {
+      background: #E5E7EB; /* Slightly darker light grey */
+      color: var(--dark);
     }
 
-    .bg-dark .eyebrow {
-      color: #FFFFFF;
+    .bg-integrations .eyebrow {
+      color: var(--grey);
       font-size: clamp(13px, 1.1vw, 24px);
     }
 
-    .bg-dark .int-row {
+    .bg-integrations .int-row {
       margin-top: 0;
       overflow: hidden;
       display: flex;
@@ -165,7 +165,7 @@
       }
     }
 
-    .bg-dark .int-b {
+    .bg-integrations .int-b {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -178,12 +178,12 @@
       transition: transform 0.2s ease;
     }
 
-    .bg-dark .int-b:hover {
+    .bg-integrations .int-b:hover {
       transform: scale(1.1);
       box-shadow: none;
     }
 
-    .bg-dark .int-b img {
+    .bg-integrations .int-b img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -192,7 +192,7 @@
       transition: opacity 0.2s;
     }
 
-    .bg-dark .int-b:hover img {
+    .bg-integrations .int-b:hover img {
       opacity: 1;
     }
 
@@ -2473,7 +2473,7 @@
   </section>
 
   <!-- ═══ Integrations ═════════════════════════════════════════════ -->
-  <section id="integrations" class="bg-dark" style="padding: clamp(45px, 5vw, 90px) 0; overflow: hidden;">
+  <section id="integrations" class="bg-integrations" style="padding: clamp(45px, 5vw, 90px) 0; overflow: hidden;">
     <div class="wrap" style="width:100vw; max-width:100%; box-sizing:border-box;">
       <div class="sh" style="text-align:center">
         <span class="eyebrow"
