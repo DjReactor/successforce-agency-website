@@ -121,17 +121,17 @@
       background: var(--bg-alt);
     }
 
-    section.bg-integrations {
-      background: #E5E7EB; /* Slightly darker light grey */
-      color: var(--dark);
+    section.bg-dark {
+      background: var(--dark);
+      color: var(--white);
     }
 
-    .bg-integrations .eyebrow {
-      color: var(--grey);
+    .bg-dark .eyebrow {
+      color: #FFFFFF;
       font-size: clamp(13px, 1.1vw, 24px);
     }
 
-    .bg-integrations .int-row {
+    .bg-dark .int-row {
       margin-top: 0;
       overflow: hidden;
       display: flex;
@@ -141,6 +141,7 @@
       flex-wrap: nowrap;
       /* Force single line */
       width: 100%;
+      pointer-events: none;
     }
 
     .int-track {
@@ -151,9 +152,10 @@
       animation: marquee 40s linear infinite;
     }
 
-    .int-row:hover .int-track {
+    /* Pause on hover removed */
+    /* .int-row:hover .int-track {
       animation-play-state: paused;
-    }
+    } */
 
     @keyframes marquee {
       from {
@@ -165,36 +167,39 @@
       }
     }
 
-    .bg-integrations .int-b {
+    .bg-dark .int-b {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: clamp(100px, 10vw, 160px);
-      height: clamp(80px, 8vw, 120px);
+      height: clamp(40px, 4.5vw, 64px);
+      width: auto;
       flex-shrink: 0;
       background: transparent;
       border: none;
       border-radius: 0;
-      transition: transform 0.2s ease;
+      /* transition: transform 0.2s ease; */
+      padding: 0 clamp(10px, 1.5vw, 30px);
     }
 
-    .bg-integrations .int-b:hover {
-      transform: scale(1.1);
+    /* Scale hover removed */
+    /* .bg-dark .int-b:hover {
+      transform: scale(1.05);
       box-shadow: none;
-    }
+    } */
 
-    .bg-integrations .int-b img {
-      width: 100%;
+    .bg-dark .int-b img {
       height: 100%;
+      width: auto;
       object-fit: contain;
       filter: none;
-      opacity: 0.85;
-      transition: opacity 0.2s;
+      opacity: 1;
+      /* transition: opacity 0.2s; */
     }
 
-    .bg-integrations .int-b:hover img {
+    /* Opacity hover removed */
+    /* .bg-dark .int-b:hover img {
       opacity: 1;
-    }
+    } */
 
     /* ── Hero keyframes (fire immediately on load) ── */
     @keyframes fadeUp {
@@ -240,7 +245,7 @@
       font-size: clamp(38px, 6vw, 160px);
       font-weight: 700;
       letter-spacing: -.04em;
-      line-height: 1.05;
+      line-height: 1.02;
       text-wrap: balance;
     }
 
@@ -431,7 +436,7 @@
     }
 
     .nav.on .nav-in {
-      padding: clamp(20px, 2.2vw, 32px) 0;
+      padding: clamp(12px, 1.5vh, 48px) 0;
     }
 
     .nav.on .logo,
@@ -448,7 +453,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: clamp(32px, 3.5vw, 64px) 0;
+      padding: clamp(12px, 2.5vh, 24px) 0;
       transition: padding .25s;
     }
 
@@ -559,7 +564,11 @@
 
     /* ════════════ HERO ════════════ */
     .hero {
-      padding: clamp(120px, 12vw, 320px) 0 clamp(80px, 8vw, 200px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(86px, 10vh, 960px) 0 clamp(32px, 4.8vh, 640px);
       background: var(--dark);
       text-align: center;
       position: relative;
@@ -596,7 +605,7 @@
       border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 100px;
       padding: clamp(6px, 0.6vw, 10px);
-      margin-bottom: clamp(24px, 2.5vw, 40px);
+      margin-bottom: clamp(8px, 2.4vh, 160px);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
@@ -626,8 +635,8 @@
 
     .hero h1 {
       color: #fff;
-      max-width: clamp(860px, 65vw, 1600px);
-      margin: 0 auto clamp(20px, 2vw, 48px);
+      max-width: clamp(1200px, 98vw, 3200px);
+      margin: 0 auto clamp(6px, 1.8vh, 144px);
     }
 
     .hero h1 em {
@@ -639,7 +648,7 @@
       font-size: clamp(17px, 1.3vw, 32px);
       color: rgba(255, 255, 255, .55);
       max-width: clamp(720px, 50vw, 1200px);
-      margin: 0 auto clamp(30px, 3.5vw, 80px);
+      margin: 0 auto clamp(8px, 2.4vh, 224px);
       line-height: 1.75;
     }
 
@@ -648,7 +657,7 @@
       gap: clamp(12px, 1vw, 24px);
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: clamp(40px, 5vw, 100px);
+      margin-bottom: clamp(24px, 5.6vh, 336px);
     }
 
     .proof {
@@ -697,6 +706,16 @@
       border: 1px solid var(--border);
       border-radius: var(--rl);
       overflow: hidden;
+    }
+
+    /* Cinematic High-Res Scaling (Applied only when vertical space allows) */
+    @media (min-height: 1000px) {
+      .nav-in { padding: 26px 0 !important; }
+      .hero { padding-top: 14.4vh !important; padding-bottom: 9.6vh !important; }
+      .hero-badge { margin-bottom: 4.8vh !important; }
+      .hero h1 { margin-bottom: 3.2vh !important; }
+      .hero-sub { margin-bottom: 4.8vh !important; }
+      .hero-ctas { margin-bottom: 8vh !important; }
     }
 
     @media(max-width:900px) {
@@ -1268,6 +1287,7 @@
         grid-template-columns: 1fr;
         gap: 48px;
       }
+
       .pi .fi {
         display: none;
       }
@@ -1895,7 +1915,7 @@
         </div>
       </div>
       <p class="h-a1"
-        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px">
+        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:clamp(8px, 2vh, 16px)">
         Revenue &nbsp;·&nbsp; Efficiency &nbsp;·&nbsp; Peace of Mind</p>
       <h1 class="h-a2">Make <em>more money.</em> Buy back the time to <em>enjoy it.</em></h1>
       <p class="hero-sub h-a3">Right now, leads are going cold, calls are going unanswered, and follow-ups are falling
@@ -2473,9 +2493,9 @@
   </section>
 
   <!-- ═══ Integrations ═════════════════════════════════════════════ -->
-  <section id="integrations" class="bg-integrations" style="padding: clamp(45px, 5vw, 90px) 0; overflow: hidden;">
+  <section id="integrations" class="bg-dark" style="padding: clamp(45px, 5vw, 90px) 0; overflow: hidden;">
     <div class="wrap" style="width:100vw; max-width:100%; box-sizing:border-box;">
-      <div class="sh" style="text-align:center">
+      <div class="sh" style="text-align:center; max-width:100%;">
         <span class="eyebrow"
           style="display:inline-block;margin-bottom:clamp(30px, 3.5vw, 64px); margin-top:0;">Seamless integration with
           tools you already use</span>
@@ -2579,7 +2599,8 @@
             <div class="pcard light" style="padding-top:clamp(44px,4.5vw,64px);">
               <div class="badge">Most Popular</div>
               <div class="p-plan">Starter</div>
-              <div style="font-size:clamp(16px,1.3vw,22px);color:rgba(0,0,0,.6);margin-bottom:clamp(24px, 2.5vw, 50px);font-weight:500;">
+              <div
+                style="font-size:clamp(16px,1.3vw,22px);color:rgba(0,0,0,.6);margin-bottom:clamp(24px, 2.5vw, 50px);font-weight:500;">
                 24/7 AI Receptionist</div>
 
               <div class="p-ar" style="margin-bottom:4px; align-items:baseline;">
@@ -2588,10 +2609,15 @@
                 <span class="p-amt" style="color:#1a1a1a;font-size:clamp(52px,5vw,80px);">297</span>
                 <span style="font-size:clamp(31px,3vw,48px);color:#1a1a1a;font-weight:300;margin-left:2px;">/mo</span>
               </div>
-              <div style="font-size:clamp(21px,1.6vw,26px);color:#1a1a1a;font-weight:700;margin-bottom:12px;">+ $2,000 one-time setup fee</div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.60/min · Voice AI usage</div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+ $0.05 / SMS sent</div>
-              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:clamp(12px, 1.25vw, 25px);">+ $0.05 / Workflow run</div>
+              <div style="font-size:clamp(21px,1.6vw,26px);color:#1a1a1a;font-weight:700;margin-bottom:12px;">+ $2,000
+                one-time setup fee</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+
+                $0.60/min · Voice AI usage</div>
+              <div style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:4px;">+
+                $0.05 / SMS sent</div>
+              <div
+                style="font-size:clamp(14px,1.1vw,17px);color:var(--accent);font-weight:600;margin-bottom:clamp(12px, 1.25vw, 25px);">
+                + $0.05 / Workflow run</div>
               <ul class="p-list" style="border-top:1px solid rgba(0,0,0,.08);padding-top:clamp(12px, 1.25vw, 25px);">
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
@@ -2625,13 +2651,19 @@
                     </svg></span>Continuous monitoring &amp; optimization</li>
               </ul>
 
-              <h6 style="font-size:clamp(13px, 0.9vw, 20px); font-weight:700; color:#4b5563; margin-top:clamp(24px, 2.5vw, 48px); margin-bottom:12px; text-transform:none; letter-spacing:0;">Add-ons (Optional):</h6>
+              <h6
+                style="font-size:clamp(13px, 0.9vw, 20px); font-weight:700; color:#4b5563; margin-top:clamp(24px, 2.5vw, 48px); margin-bottom:12px; text-transform:none; letter-spacing:0;">
+                Add-ons (Optional):</h6>
 
               <div style="background:#fff; border-radius:12px; border:1px solid #eff6ff; overflow:hidden;">
                 <!-- Row 1 -->
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:clamp(12px, 1.2vw, 24px) clamp(16px, 1.5vw, 32px); background:#eff6ff;">
-                  <span style="font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:#374151; line-height:1.4;">Social Proof Engine</span>
-                  <span style="font-size:clamp(14px, 1.1vw, 26px); font-weight:700; color:#111827; white-space:nowrap; margin-left:clamp(12px, 1.2vw, 24px);">+$100/mo</span>
+                <div
+                  style="display:flex; justify-content:space-between; align-items:center; padding:clamp(12px, 1.2vw, 24px) clamp(16px, 1.5vw, 32px); background:#eff6ff;">
+                  <span
+                    style="font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:#374151; line-height:1.4;">Social
+                    Proof Engine</span>
+                  <span
+                    style="font-size:clamp(14px, 1.1vw, 26px); font-weight:700; color:#111827; white-space:nowrap; margin-left:clamp(12px, 1.2vw, 24px);">+$100/mo</span>
                 </div>
               </div>
               <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
@@ -2654,12 +2686,18 @@
                 Your Business Automated — Powered by AI</div>
 
               <div class="p-ar" style="margin-bottom:8px; align-items:baseline;">
-                <span style="font-size:clamp(48px,5vw,72px);color:#fff;font-weight:700;letter-spacing:-.04em;line-height:1.1;">Custom Pricing</span>
+                <span
+                  style="font-size:clamp(48px,5vw,72px);color:#fff;font-weight:700;letter-spacing:-.04em;line-height:1.1;">Custom
+                  Pricing</span>
               </div>
-              <div style="font-size:clamp(16px,1.2vw,20px);color:rgba(255,255,255,.6);font-weight:500;margin-bottom:clamp(12px, 1.25vw, 25px);line-height:1.6;">
-                The ultimate end-to-end revenue engine, engineered to put your business on complete autopilot. A well-oiled, integrated system built for massive scale and high conversion, orchestrating complex lead flows and CRM logic into one seamless growth machine.
+              <div
+                style="font-size:clamp(16px,1.2vw,20px);color:rgba(255,255,255,.6);font-weight:500;margin-bottom:clamp(12px, 1.25vw, 25px);line-height:1.6;">
+                The ultimate end-to-end revenue engine, engineered to put your business on complete autopilot. A
+                well-oiled, integrated system built for massive scale and high conversion, orchestrating complex lead
+                flows and CRM logic into one seamless growth machine.
               </div>
-              <ul class="p-list" style="border-top:1px solid rgba(255,255,255,.1);padding-top:clamp(12px, 1.25vw, 25px);">
+              <ul class="p-list"
+                style="border-top:1px solid rgba(255,255,255,.1);padding-top:clamp(12px, 1.25vw, 25px);">
                 <li><span class="ck"><svg viewBox="0 0 24 24">
                       <path d="M20 6L9 17l-5-5" />
                     </svg></span>Everything in Starter</li>
