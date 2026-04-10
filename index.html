@@ -245,7 +245,7 @@
       font-size: clamp(38px, 6vw, 160px);
       font-weight: 700;
       letter-spacing: -.04em;
-      line-height: 1.02;
+      line-height: 1.05;
       text-wrap: balance;
     }
 
@@ -436,7 +436,7 @@
     }
 
     .nav.on .nav-in {
-      padding: clamp(12px, 1.5vh, 48px) 0;
+      padding: clamp(20px, 2.2vw, 32px) 0;
     }
 
     .nav.on .logo,
@@ -453,7 +453,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: clamp(12px, 2.5vh, 24px) 0;
+      padding: clamp(32px, 3.5vw, 64px) 0;
       transition: padding .25s;
     }
 
@@ -564,11 +564,7 @@
 
     /* ════════════ HERO ════════════ */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(86px, 10vh, 960px) 0 clamp(32px, 4.8vh, 640px);
+      padding: clamp(120px, 12vw, 320px) 0 clamp(80px, 8vw, 200px);
       background: var(--dark);
       text-align: center;
       position: relative;
@@ -605,7 +601,7 @@
       border: 1px solid rgba(255, 255, 255, .08);
       border-radius: 100px;
       padding: clamp(6px, 0.6vw, 10px);
-      margin-bottom: clamp(8px, 2.4vh, 160px);
+      margin-bottom: clamp(24px, 2.5vw, 40px);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
@@ -635,8 +631,8 @@
 
     .hero h1 {
       color: #fff;
-      max-width: clamp(1200px, 98vw, 3200px);
-      margin: 0 auto clamp(6px, 1.8vh, 144px);
+      max-width: clamp(860px, 65vw, 1600px);
+      margin: 0 auto clamp(20px, 2vw, 48px);
     }
 
     .hero h1 em {
@@ -648,7 +644,7 @@
       font-size: clamp(17px, 1.3vw, 32px);
       color: rgba(255, 255, 255, .55);
       max-width: clamp(720px, 50vw, 1200px);
-      margin: 0 auto clamp(8px, 2.4vh, 224px);
+      margin: 0 auto clamp(30px, 3.5vw, 80px);
       line-height: 1.75;
     }
 
@@ -657,7 +653,7 @@
       gap: clamp(12px, 1vw, 24px);
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: clamp(24px, 5.6vh, 336px);
+      margin-bottom: clamp(40px, 5vw, 100px);
     }
 
     .proof {
@@ -706,16 +702,6 @@
       border: 1px solid var(--border);
       border-radius: var(--rl);
       overflow: hidden;
-    }
-
-    /* Cinematic High-Res Scaling (Applied only when vertical space allows) */
-    @media (min-height: 1000px) {
-      .nav-in { padding: 26px 0 !important; }
-      .hero { padding-top: 14.4vh !important; padding-bottom: 9.6vh !important; }
-      .hero-badge { margin-bottom: 4.8vh !important; }
-      .hero h1 { margin-bottom: 3.2vh !important; }
-      .hero-sub { margin-bottom: 4.8vh !important; }
-      .hero-ctas { margin-bottom: 8vh !important; }
     }
 
     @media(max-width:900px) {
@@ -1282,10 +1268,10 @@
       margin-top: clamp(56px, 5vw, 120px);
     }
 
-    @media(max-width:860px) {
+    @media(max-width:1080px) {
       .pw {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: clamp(48px, 5vw, 100px);
       }
 
       .pi .fi {
@@ -1915,7 +1901,7 @@
         </div>
       </div>
       <p class="h-a1"
-        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:clamp(8px, 2vh, 16px)">
+        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px">
         Revenue &nbsp;·&nbsp; Efficiency &nbsp;·&nbsp; Peace of Mind</p>
       <h1 class="h-a2">Make <em>more money.</em> Buy back the time to <em>enjoy it.</em></h1>
       <p class="hero-sub h-a3">Right now, leads are going cold, calls are going unanswered, and follow-ups are falling
@@ -2558,11 +2544,6 @@
           <h2>Simple, transparent pricing.</h2>
           <p>Start with a 24/7 AI Receptionist, or automate your entire operation. Either way, we build it, run it, and
             optimize it for you — no extra headcount, no setup headaches.</p>
-          <div class="math-box">
-            <p><strong>The math is simple:</strong> If our 24/7 AI Receptionist captures just one additional job per
-              month at a $2K average ticket, that's <strong>$24K/yr in new revenue</strong> — from a $297/month
-              investment.</p>
-          </div>
           <!-- 3 inline FAQs -->
           <div class="fi">
             <div class="fq" onclick="tFaq(this)"><span class="fqt">What exactly do you build?</span><span
