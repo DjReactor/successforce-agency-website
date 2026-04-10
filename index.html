@@ -86,7 +86,11 @@
       color: var(--dark);
       background: #fff;
       -webkit-font-smoothing: antialiased;
-      overflow-x: clip;
+      overflow-x: hidden;
+    }
+
+    html {
+      overflow-x: hidden;
     }
 
     a {
@@ -96,9 +100,17 @@
 
     /* ── Layout ── */
     .wrap {
-      max-width: clamp(1200px, 80vw, 2400px);
+      width: 100%;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 clamp(20px, 3vw, 80px);
+      box-sizing: border-box;
+    }
+
+    @media(min-width: 1600px) {
+      .wrap {
+        max-width: 80vw;
+      }
     }
 
     @media(max-width:1024px) {
@@ -524,7 +536,7 @@
       position: fixed;
       inset: 0;
       background: var(--dark);
-      z-index: 99;
+      z-index: 101;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1888,7 +1900,7 @@
           <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
             class="btn accent sm nc">Claim Your Free Audit</a>
           <button class="hbg" onclick="oM()" aria-label="Menu">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round">
               <path d="M3 12h18M3 6h18M3 18h18" />
             </svg>
@@ -2650,7 +2662,7 @@
                     style="font-size:clamp(14px, 1.1vw, 26px); font-weight:600; color:#374151; line-height:1.4;">Social
                     Proof Engine</span>
                   <span
-                    style="font-size:clamp(14px, 1.1vw, 26px); font-weight:700; color:#111827; white-space:nowrap; margin-left:clamp(12px, 1.2vw, 24px);">+$100/mo</span>
+                    style="font-size:clamp(14px, 1.1vw, 26px); font-weight:700; color:#111827; white-space:nowrap; margin-left:clamp(12px, 1.2vw, 24px);">+$200/mo</span>
                 </div>
               </div>
               <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
