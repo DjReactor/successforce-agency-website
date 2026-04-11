@@ -635,6 +635,22 @@
       justify-content: center;
     }
 
+    .hero-meta {
+      text-align: center;
+      font-size: clamp(14px, 1.2vw, 20px);
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .38);
+      margin-bottom: 28px;
+    }
+    
+    @media(max-width: 1024px) {
+      .hero-meta {
+        font-size: clamp(9.8px, 0.84vw, 14px);
+      }
+    }
+
     .badge-text {
       font-size: clamp(12px, 1vw, 20px);
       font-weight: 500;
@@ -672,36 +688,39 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(24px, 3vw, 64px);
-      flex-wrap: wrap;
+      gap: clamp(8px, 1.5vw, 64px);
+      flex-wrap: nowrap;
     }
 
     .pv {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: clamp(2px, 0.5vw, 5px);
     }
 
     .pn {
-      font-size: clamp(26px, 2.5vw, 56px);
+      font-size: clamp(15px, 2.5vw, 56px);
       font-weight: 700;
       letter-spacing: -.04em;
       color: #fff;
+      white-space: nowrap;
     }
 
     .pl {
-      font-size: clamp(11px, 0.8vw, 18px);
+      font-size: clamp(8px, 0.8vw, 18px);
       font-weight: 500;
       color: rgba(255, 255, 255, .36);
       letter-spacing: .06em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .pd {
       width: 1px;
-      height: clamp(36px, 3vw, 64px);
+      height: clamp(20px, 3vw, 64px);
       background: rgba(255, 255, 255, .12);
+      flex-shrink: 0;
     }
 
     /* ════════════ PILLARS ════════════ */
@@ -1881,7 +1900,7 @@
     <a href="#pricing" onclick="cM()">Pricing</a>
     <a href="#faq" onclick="cM()">FAQ</a>
     <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent"
-      onclick="cM()">Get Your Audit</a>
+      onclick="cM()">Get My Systems Audit</a>
   </div>
 
   <!-- ═══ Nav ══════════════════════════════════════════════════════ -->
@@ -1898,7 +1917,7 @@
         </ul>
         <div class="nav-r">
           <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer"
-            class="btn accent sm nc">Claim Your Free Audit</a>
+            class="btn accent sm nc">Claim My Free Systems Audit</a>
           <button class="hbg" onclick="oM()" aria-label="Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round">
@@ -1918,8 +1937,7 @@
           <span class="badge-pill">Revenue Automation Agency</span>
         </div>
       </div>
-      <p class="h-a1"
-        style="text-align:center;font-size:clamp(14px, 1.2vw, 20px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:28px">
+      <p class="h-a1 hero-meta">
         Revenue &nbsp;·&nbsp; Efficiency &nbsp;·&nbsp; Peace of Mind</p>
       <h1 class="h-a2">Make <em>more money.</em> Buy back the time to <em>enjoy it.</em></h1>
       <p class="hero-sub h-a3">Right now, leads are going cold, calls are going unanswered, and follow-ups are falling
@@ -1932,7 +1950,7 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <a href="#how-it-works" class="btn outline-w lg">See How It Works</a>
+        <a href="#how-it-works" class="btn outline-w lg">Show Me How It Works</a>
       </div>
       <div class="proof h-a4">
         <div class="pv"><span class="pn">24/7</span><span class="pl">Lead Coverage</span></div>
@@ -2522,8 +2540,8 @@
       <div class="proc-bar">
         <div class="proc-step">
           <div class="proc-n">01</div>
-          <h5>Discovery Call</h5>
-          <p>We map your current workflow, pinpoint where revenue is leaking, and define exactly what the system needs
+          <h5>Systems Audit</h5>
+          <p>Starting with a discovery call, we map your current workflow, pinpoint where revenue is leaking, and define exactly what the system needs
             to do.</p>
           <div class="proc-acc"></div>
         </div>
@@ -2808,7 +2826,7 @@
           <span class="eyebrow">Questions</span>
           <h2>Before you reach out.</h2>
           <p>Most people have the same questions. Here are the honest answers.</p>
-          <a href="mailto:hello@successforce.agency" class="btn outline mt32">Still have questions?</a>
+          <a href="mailto:hello@successforce.agency" class="btn outline mt32">I Still Have Questions</a>
         </div>
         <div class="faq-list">
           <div class="fi">
@@ -2859,7 +2877,7 @@
             <div class="fq" onclick="tFaq(this)"><span class="fqt">What happens after I reach out?</span><span
                 class="ft">+</span></div>
             <div class="fa">
-              <div class="fai">We'll schedule a 30-minute discovery call to map out exactly where your business is
+              <div class="fai">We'll start your systems audit with a 30-minute discovery call to map out exactly where your business is
                 leaking revenue and show you what an automated system would look like — no pitch, no pressure. If it
                 makes sense, we move forward with a custom build.</div>
             </div>
@@ -2874,13 +2892,13 @@
     <div class="wrap" style="max-width:clamp(900px, 65vw, 1800px)">
       <span class="eyebrow" style="color:rgba(255,255,255,.36);text-align:center;display:block">Get Started</span>
       <h2>Stop losing revenue to manual processes.</h2>
-      <p class="sub">Book a free 30-minute strategy call. We'll map out exactly where your business is leaking revenue
+      <p class="sub">Claim your free systems audit. We'll start with a 30-minute discovery call to map out exactly where your business is leaking revenue
         and show you what an automated system would look like — no pitch, no pressure.</p>
       <div
         style="margin-top:clamp(40px, 5vw, 64px); display:flex; flex-direction:column; align-items:center; gap:20px;">
         <a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer" class="btn accent lg"
           style="padding:clamp(16px, 1.8vw, 36px) clamp(40px, 4vw, 80px); font-size:clamp(16px, 1.4vw, 32px); font-weight:600; box-shadow:0 12px 32px rgba(255,94,58,.25);">
-          Claim Your Free Revenue Automation Audit
+          Claim My Free Systems Audit
           <svg viewBox="0 0 24 24" style="width:1.2em; height:1.2em; margin-left:4px;">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
@@ -2897,7 +2915,7 @@
         <div style="display:flex; flex-direction:column; justify-content:space-between;">
           <div>
             <div class="fl"><span class="ndot"></span>SuccessForce</div>
-            <p class="ft2">An Operational Transformation Agency building custom AI-powered systems to scale revenue,
+            <p class="ft2">A <span style="color:#fff;font-weight:500;">Revenue Automation Agency</span> building custom AI-powered systems to scale revenue,
               increase efficiency, and maintain founder sanity.</p>
           </div>
           <div style="margin-top:clamp(40px, 5vw, 80px);">
@@ -2921,8 +2939,7 @@
             <li><a href="#results">Client Results</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQs</a></li>
-            <li><a href="https://cal.com/opsaudit/book-audit" target="_blank" rel="noopener noreferrer">Claim Your Free
-                Audit</a></li>
+
           </ul>
         </div>
         <div>
